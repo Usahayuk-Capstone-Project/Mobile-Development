@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/beranda"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/beranda"
+        />
+    <item
+        android:id="@+id/komunitas"
+        android:enabled="true"
+        android:icon="@drawable/ic_groups_24"
+        android:title="@string/komunitas" />
+    <item
+        android:id="@+id/usahaku"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_chart_24"
+        android:title="@string/usahaku" />
+    <item
+        android:id="@+id/profil"
+        android:enabled="true"
+        android:icon="@drawable/ic_navbar_person_24"
+        android:title="@string/profil" />
+</menu>

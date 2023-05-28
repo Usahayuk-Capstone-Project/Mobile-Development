@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BottomNavigationView.Active" parent="TextAppearance.Design.Tab">
+        <item name="android:textColor">@color/green_pressed</item>
+        <item name="android:textSize">8sp</item>
+        <!-- Customize other attributes as per your requirement -->
+    </style>
+
+    <style name="BottomNavigationView.Inactive" parent="TextAppearance.Design.Tab">
+        <item name="android:textColor">@color/green_pressed</item>
+        <item name="android:textSize">8sp</item>
+        <!-- Customize other attributes as per your requirement -->
+    </style>
+
+</resources>

@@ -1,0 +1,62 @@
+<resources>
+
+    <string name="app_name">UsahaYuk</string>
+    <string name="signup">Daftar</string>
+    <string name="login">Masuk</string>
+    <string name="title_signup_page">Lengkapi data dirimu di bawah ini ya</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="message_login_page">Masuk di bawah untuk akses akun mu</string>
+    <string name="title_login_page">Selamat Datang</string>
+    <string name="name">Nama</string>
+    <string name="logout">Keluar</string>
+    <string name="pass">Password</string>
+    <string name="masukgoogle">Masuk Via Google</string>
+    <string name="daftar">Daftar</string>
+    <string name="nama">Nama</string>
+    <string name="masukkan_deskripsi">Masukkan Deskripsi</string>
+    <string name="upload">Upload</string>
+    <string name="galeri">Galeri</string>
+    <string name="camera">Camera</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="registerInfo">Belum Punya Akun?</string>
+    <string name="register">Daftar</string>
+    <string name="phone">Nomer Handphone</string>
+    <string name="daftarGoogle">Daftar Via Google</string>
+    <string name="haveAccount">Udah punya akun sebelumnya?</string>
+    <string name="haveAccountLink">Masuk</string>
+    <string name="message_register_page">Daftar sekarang untuk mulai usahamu</string>
+    <string name="title_welcome_page">Mulai Usahayuk!</string>
+    <string name="message_welcome_page">Selangkah lagi menuju kesuksesanmu</string>
+    <string name="next">Ayo Mulai</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="beranda">Beranda</string>
+    <string name="komunitas">Komunitas</string>
+    <string name="usahaku">Usahaku</string>
+    <string name="profil">Profil</string>
+    <string name="welcome_text">Selamat Pagi, Zabran</string>
+    <string name="rekomen_title">Cari Rekomendasi Usaha Anda</string>
+    <string name="find_recomend">Mulai Usahayuk</string>
+    <string name="tittle2">Kenapa Harus Mulai Usaha ?</string>
+    <string name="tips1">“Keberanian untuk memulai adalah kunci untuk mencapai kesuksesan dalam bisnis.”</string>
+    <string name="tittlekomunitas1">Temukan Saran di komunitas</string>
+    <string name="cardtext1">Strategi pengembangan bisnis UMKM yang sukses di era digital</string>
+    <string name="nama_komunitas">Nama Komunitas</string>
+    <string name="titlekomunitas2">Kembangkan Koneksi Anda</string>
+    <string name="usahaku_title">Usahaku</string>
+    <string name="nama_usaha">Nama Usaha</string>
+    <string name="pemasukan_usahaku">Pemasukan</string>
+    <string name="nominal_pemasukan">Rp.0/ Hari</string>
+    <string name="lihat_detail">Lihat Detail</string>
+    <string name="masukkan_data">Masukkan Data</string>
+    <string name="tingkatkan_penjualan">Tingkatkan Penjualan</string>
+    <string name="future_update">Sedang Dalam Pengembangan</string>
+
+    <string name="sukses_title">Berhasil menambahkan ide bisnis</string>
+    <string name="sukses_desc">Cek ide bisnismu di menu Usahaku</string>
+    <string name="btn_lihat_detail">Lihat Detail</string>
+    <string name="kembali_beranda">Kembali ke Beranda</string>
+
+
+</resources>
