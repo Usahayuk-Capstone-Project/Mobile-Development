@@ -55,7 +55,7 @@
         app:layout_constraintTop_toBottomOf="@+id/messageTextView">
 
         <com.example.usahayuk.customview.CustomMail
-            android:id="@+id/emailEditText"
+            android:id="@+id/inputEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:alpha="0"
@@ -79,7 +79,7 @@
         app:layout_constraintTop_toBottomOf="@+id/emailEditTextLayout">
 
         <com.example.usahayuk.customview.CustomPassword
-            android:id="@+id/passwordEditText"
+            android:id="@+id/inputPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:alpha="0"
@@ -91,11 +91,28 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <CheckBox
+        android:id="@+id/seePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_gravity="left"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="209dp"
+        android:alpha="0"
+        android:text="@string/lihat_katasandi"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passwordEditTextLayout"
+        tools:ignore="MissingConstraints" />
+
     <com.example.usahayuk.customview.CustomButton
         android:id="@+id/loginButton"
         android:layout_width="345dp"
         android:layout_height="50dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
         android:alpha="0"
         android:textAllCaps="false"
         android:backgroundTint="@color/green_main"
@@ -104,7 +121,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/seePassword" />
 
     <Button
         android:id="@+id/btnRegister"
@@ -168,31 +185,16 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/btnRegister">
-
-
         <TextView
             android:id="@+id/txtRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginStart="115dp"
-            android:text="@string/registerInfo" />
+            android:text="@string/registerInfo"
+            app:layout_constraintTop_toBottomOf="@+id/btnRegister"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="MissingConstraints" />
 
-        <TextView
-            android:id="@+id/txtRegisterlink"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:gravity="center"
-            android:text="@string/register"
-            android:textColor="@color/green_main" />
-
-
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

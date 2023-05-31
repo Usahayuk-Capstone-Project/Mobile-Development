@@ -19,8 +19,7 @@
     <string name="galeri">Galeri</string>
     <string name="camera">Camera</string>
     <string name="deskripsi">Deskripsi</string>
-    <string name="registerInfo">Belum Punya Akun?</string>
-    <string name="register">Daftar</string>
+    <string name="registerInfo">Belum Punya Akun?<font color="#0F8A38"> Daftar</font></string>
     <string name="phone">Nomer Handphone</string>
     <string name="daftarGoogle">Daftar Via Google</string>
     <string name="haveAccount">Sudah punya akun sebelumnya?<font color="#0F8A38"> Masuk</font></string>
@@ -132,6 +131,7 @@
     <string name="kawasan_industri">Kawasan Industri</string>
     <string name="terminal_transportasi_umum">Terminal/transportasi umum</string>
     <string name="cari_rekomendasi">Cari Rekomendasi</string>
+    <string name="lihat_katasandi">lihat katasandi</string>
 
 
 </resources>

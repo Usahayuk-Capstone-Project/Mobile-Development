@@ -21,7 +21,7 @@ class RegisterActivity : AppCompatActivity() {
         binding.txtHaveAccount.setOnClickListener {
             val intent = Intent (this, LoginActivity::class.java)
             startActivity(intent)
-            supportActionBar!!.hide()
+
         }
         playAnimation()
 
@@ -33,8 +33,6 @@ class RegisterActivity : AppCompatActivity() {
         val message = ObjectAnimator.ofFloat(binding.messageTextView, View.ALPHA, 1f).setDuration(500)
         val emailEdt = ObjectAnimator.ofFloat(binding.emailEditText, View.ALPHA, 1f).setDuration(500)
         val emailLayout = ObjectAnimator.ofFloat(binding.emailEditTextLayout, View.ALPHA, 1f).setDuration(500)
-        val phoneEdt = ObjectAnimator.ofFloat(binding.phoneEditText, View.ALPHA, 1f).setDuration(500)
-        val phoneLayout = ObjectAnimator.ofFloat(binding.phoneEditTextLayout, View.ALPHA, 1f).setDuration(500)
         val nameEdt = ObjectAnimator.ofFloat(binding.nameEditText, View.ALPHA, 1f).setDuration(500)
         val nameLayout = ObjectAnimator.ofFloat(binding.nameEditTextLayout, View.ALPHA, 1f).setDuration(500)
         val passwordEdt = ObjectAnimator.ofFloat(binding.passwordEditText, View.ALPHA, 1f).setDuration(500)
@@ -42,7 +40,7 @@ class RegisterActivity : AppCompatActivity() {
         val login = ObjectAnimator.ofFloat(binding.loginButton, View.ALPHA, 1f).setDuration(500)
 
         val together = AnimatorSet().apply {
-            playTogether(nameEdt,nameLayout,phoneEdt,phoneLayout,emailEdt,emailLayout,passwordEdt,passwordLayout)
+            playTogether(nameEdt,nameLayout,emailEdt,emailLayout,passwordEdt,passwordLayout)
         }
 
         AnimatorSet().apply {
