@@ -13,7 +13,8 @@ interface ApiService {
     fun register(
         @Field("displayName") name :String,
         @Field("email") email :String,
-        @Field("password") password :String
+        @Field("password") password :String,
+        @Field("phoneNumber") phoneNumber : Any
     ): Call<RegisterResponse>
 
     @FormUrlEncoded
