@@ -64,9 +64,6 @@ data class UserRecord(
 	@field:SerializedName("stsTokenManager")
 	val stsTokenManager: StsTokenManager? = null,
 
-	@field:SerializedName("phoneNumber")
-	val phoneNumber: Any? = null,
-
 	@field:SerializedName("lastLoginAt")
 	val lastLoginAt: String? = null,
 
