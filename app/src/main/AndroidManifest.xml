@@ -12,6 +12,9 @@
         android:theme="@style/Theme.UsahaYuk"
         tools:targetApi="31">
         <activity
+            android:name=".DetailArticleActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.mybussiness.DetailUsahaActivity"
             android:exported="false" />
         <activity
