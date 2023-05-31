@@ -9,12 +9,12 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         <TextView
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Isi Data Usaha"
+            android:text="@string/isi_data_usaha"
             android:fontFamily="@font/poppinsbold"
             android:textSize="20sp"
             android:layout_marginTop="20dp"
@@ -26,7 +26,7 @@
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="@string/title_desc"
             android:fontFamily="@font/poppinsbold"
             android:textSize="16sp"
             android:layout_marginTop="16dp"
@@ -38,7 +38,7 @@
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Skala Usaha"
+            android:text="@string/skala_usaha"
             android:fontFamily="@font/poppinsmedium"
             android:textSize="16sp"
             android:layout_marginTop="20dp"
@@ -57,17 +57,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="Mikro"/>
+                android:text="@string/mikro"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="Kecil"/>
+                android:text="@string/kecil"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="Menengah"/>
+                android:text="@string/menengah"/>
 
         </RadioGroup>
 
@@ -75,7 +75,7 @@
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Modal Usaha"
+            android:text="@string/modal_usaha"
             android:fontFamily="@font/poppinsmedium"
             android:textSize="16sp"
             android:layout_marginTop="20dp"
@@ -95,44 +95,44 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="<= 3 Juta"/>
+                android:text="@string/_3_juta"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="3-5 Juta"/>
+                android:text="@string/_3_5_juta"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="5-10 Juta"/>
+                android:text="@string/_5_10_juta"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="10-30 Juta"/>
+                android:text="@string/_10_30_juta"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="30-50 Juta"/>
+                android:text="@string/_30_50_juta"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="50-500 Juta"/>
+                android:text="@string/_50_500_juta"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="<= 1 Miliar"/>
+                android:text="@string/_1_miliar"/>
         </RadioGroup>
 
         <TextView
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bidang Usaha"
+            android:text="@string/bidang_usaha"
             android:fontFamily="@font/poppinsmedium"
             android:textSize="16sp"
             android:layout_marginTop="20dp"
@@ -152,74 +152,74 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="Pertanian dan Perkebunan"/>
+                android:text="@string/pertanian_dan_perkebunan"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="Perikanan dan kelautan"/>
+                android:text="@string/perikanan_dan_kelautan"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="Industri Makanan dan Minuman"/>
+                android:text="@string/industri_makanan_dan_minuman"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="Industri Fashion dan Tekstil"/>
+                android:text="@string/industri_fashion_dan_tekstil"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="Industri Kerajinan Tangan dan Souvenir"/>
+                android:text="@string/industri_kerajinan_tangan_dan_souvenir"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="Pendidikan dan Pelatihan"/>
+                android:text="@string/pendidikan_dan_pelatihan"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="Jasa Kesehatan dan kecantikan"/>
+                android:text="@string/jasa_kesehatan_dan_kecantikan"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="Jasa Keuangan dan Perbankan"/>
+                android:text="@string/jasa_keuangan_dan_perbankan"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="Jasa Konsultasi dan Manajemen"/>
+                android:text="@string/jasa_konsultasi_dan_manajemen"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="Jasa Teknologi Informasi dan Komunikasi"/>
+                android:text="@string/jasa_teknologi_informasi_dan_komunikasi"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="Jasa Kebersihan"/>
+                android:text="@string/jasa_kebersihan"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="Jasa Keamanan"/>
+                android:text="@string/jasa_keamanan"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="Otomotif"/>
+                android:text="@string/otomotif"/>
         </RadioGroup>
 
         <TextView
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Omset Usaha"
+            android:text="@string/omset_usaha"
             android:fontFamily="@font/poppinsmedium"
             android:textSize="16sp"
             android:layout_marginTop="20dp"
@@ -238,39 +238,39 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="0-10 Juta"/>
+                android:text="@string/_0_10_juta"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="11-20 Juta"/>
+                android:text="@string/_11_20_juta"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="21-30 Juta"/>
+                android:text="@string/_21_30_juta"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="31-40 Juta"/>
+                android:text="@string/_31_40_juta"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="41-50 Juta"/>
+                android:text="@string/_41_50_juta"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text=">50 Juta"/>
+                android:text="@string/_50_juta"/>
         </RadioGroup>
 
         <TextView
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Usia Target"
+            android:text="@string/usia_target"
             android:fontFamily="@font/poppinsmedium"
             android:textSize="16sp"
             android:layout_marginTop="20dp"
@@ -282,49 +282,49 @@
             android:id="@+id/checkBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0-23 bulan"
+            android:text="@string/_0_23_bulan"
             app:layout_constraintTop_toBottomOf="@id/textView14"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/checkBox2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2-11 tahun"
+            android:text="@string/_2_11_tahun"
             app:layout_constraintTop_toBottomOf="@id/checkBox"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/checkBox3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="12-17 tahun"
+            android:text="@string/_12_17_tahun"
             app:layout_constraintTop_toBottomOf="@id/checkBox2"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/checkBox4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="18-39 tahun"
+            android:text="@string/_18_39_tahun"
             app:layout_constraintTop_toBottomOf="@id/checkBox3"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/checkBox5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="40-59 tahun"
+            android:text="@string/_40_59_tahun"
             app:layout_constraintTop_toBottomOf="@id/checkBox4"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/checkBox6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=">60 tahun"
+            android:text="@string/_60_tahun"
             app:layout_constraintTop_toBottomOf="@id/checkBox5"
             tools:ignore="MissingConstraints" />
         <TextView
             android:id="@+id/textView15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Gender Target"
+            android:text="@string/gender_target"
             android:fontFamily="@font/poppinsmedium"
             android:textSize="16sp"
             android:layout_marginTop="20dp"
@@ -335,14 +335,14 @@
             android:id="@+id/cb_laki_laki"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="40-59 tahun"
+            android:text="@string/laki_laki"
             app:layout_constraintTop_toBottomOf="@id/textView15"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/cb_perempuan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=">60 tahun"
+            android:text="@string/perempuan"
             app:layout_constraintTop_toBottomOf="@id/cb_laki_laki"
             tools:ignore="MissingConstraints" />
 
@@ -350,7 +350,7 @@
             android:id="@+id/textView16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Status Target"
+            android:text="@string/pekerjaan_target"
             android:fontFamily="@font/poppinsmedium"
             android:textSize="16sp"
             android:layout_marginTop="20dp"
@@ -361,70 +361,70 @@
             android:id="@+id/cb_pengangguran"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pengangguran"
+            android:text="@string/pengangguran"
             app:layout_constraintTop_toBottomOf="@id/textView16"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/cb_pelajar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pelajar/mahasiswa"
+            android:text="@string/pelajar_mahasiswa"
             app:layout_constraintTop_toBottomOf="@id/cb_pengangguran"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/cb_pegawai"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pegawai negeri sipil"
+            android:text="@string/pegawai_negeri_sipil"
             app:layout_constraintTop_toBottomOf="@id/cb_pelajar"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/cb_wiraswasta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Wiraswasta"
+            android:text="@string/wiraswasta"
             app:layout_constraintTop_toBottomOf="@id/cb_pegawai"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/cb_petani"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Petani"
+            android:text="@string/petani"
             app:layout_constraintTop_toBottomOf="@id/cb_wiraswasta"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/cb_nelayan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nelayan"
+            android:text="@string/nelayan"
             app:layout_constraintTop_toBottomOf="@id/cb_petani"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/cb_pensiunan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pensiunan"
+            android:text="@string/pensiunan"
             app:layout_constraintTop_toBottomOf="@id/cb_nelayan"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/cb_tdk_bekerja"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tidak bekerja tapi menerima penghasilan pasif"
+            android:text="@string/tidak_bekerja_tapi_menerima_penghasilan_pasif"
             app:layout_constraintTop_toBottomOf="@id/cb_pensiunan"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/cb_pekerja_informal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pekerja informal"
+            android:text="@string/pekerja_informal"
             app:layout_constraintTop_toBottomOf="@id/cb_tdk_bekerja"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/cb_irt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="IRT"
+            android:text="@string/irt"
             app:layout_constraintTop_toBottomOf="@id/cb_pekerja_informal"
             tools:ignore="MissingConstraints" />
 
@@ -432,7 +432,7 @@
             android:id="@+id/textView17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Status Target"
+            android:text="@string/status_target"
             android:fontFamily="@font/poppinsmedium"
             android:textSize="16sp"
             android:layout_marginTop="20dp"
@@ -443,42 +443,42 @@
             android:id="@+id/cb_kelas_atas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kelas atas"
+            android:text="@string/kelas_atas"
             app:layout_constraintTop_toBottomOf="@id/textView17"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/cb_kelas_menengah"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kelas menengah"
+            android:text="@string/kelas_menengah"
             app:layout_constraintTop_toBottomOf="@id/cb_kelas_atas"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/cb_kelas_menujumenengah"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Menuju kelas menengah"
+            android:text="@string/menuju_kelas_menengah"
             app:layout_constraintTop_toBottomOf="@id/cb_kelas_menengah"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/cb_kelas_rentan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kelas rentan"
+            android:text="@string/kelas_rentan"
             app:layout_constraintTop_toBottomOf="@id/cb_kelas_menujumenengah"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/cb_kelas_miskin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kelas miskin"
+            android:text="@string/kelas_miskin"
             app:layout_constraintTop_toBottomOf="@id/cb_kelas_rentan"
             tools:ignore="MissingConstraints" />
         <TextView
             android:id="@+id/textView18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Jenis Lokasi"
+            android:text="@string/jenis_lokasi"
             android:fontFamily="@font/poppinsmedium"
             android:textSize="16sp"
             android:layout_marginTop="20dp"
@@ -489,84 +489,84 @@
             android:id="@+id/cb_pegunungan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pegunungan"
+            android:text="@string/pegunungan"
             app:layout_constraintTop_toBottomOf="@id/textView18"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/cb_pusatkota"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pusat Kota dan Keramaian"
+            android:text="@string/pusat_kota_dan_keramaian"
             app:layout_constraintTop_toBottomOf="@id/cb_pegunungan"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/cb_desaalam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Desa dan Alam"
+            android:text="@string/desa_dan_alam"
             app:layout_constraintTop_toBottomOf="@id/cb_pusatkota"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/cb_lingkunganpendidikan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lingkungan pendidikan"
+            android:text="@string/lingkungan_pendidikan"
             app:layout_constraintTop_toBottomOf="@id/cb_desaalam"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/cb_pelabuhan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pelabuhan dan Laut"
+            android:text="@string/pelabuhan_dan_laut"
             app:layout_constraintTop_toBottomOf="@id/cb_lingkunganpendidikan"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/cb_areawisata"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Area Wisata"
+            android:text="@string/area_wisata"
             app:layout_constraintTop_toBottomOf="@id/cb_pelabuhan"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/cb_pemukiman"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pemukiman penduduk"
+            android:text="@string/pemukiman_penduduk"
             app:layout_constraintTop_toBottomOf="@id/cb_areawisata"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/cb_pusatbelanja"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pusat Perbelanjaan"
+            android:text="@string/pusat_perbelanjaan"
             app:layout_constraintTop_toBottomOf="@id/cb_pemukiman"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/cb_areaibadah"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Area Peribadahan"
+            android:text="@string/area_peribadahan"
             app:layout_constraintTop_toBottomOf="@id/cb_pusatbelanja"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/cb_perkantoran"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Perkantoran"
+            android:text="@string/perkantoran"
             app:layout_constraintTop_toBottomOf="@id/cb_areaibadah"
             tools:ignore="MissingConstraints" />
         <CheckBox
             android:id="@+id/cb_areaindustri"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kawasan Industri"
+            android:text="@string/kawasan_industri"
             app:layout_constraintTop_toBottomOf="@id/cb_perkantoran"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints,TooManyViews" />
         <CheckBox
             android:id="@+id/cb_terminal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Terminal/transportasi umum"
+            android:text="@string/terminal_transportasi_umum"
             app:layout_constraintTop_toBottomOf="@id/cb_areaindustri"
             tools:ignore="MissingConstraints" />
 
@@ -576,7 +576,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/poppinsmedium"
-            android:text="Cari Rekomendasi"
+            android:text="@string/cari_rekomendasi"
             android:textAllCaps="false"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
