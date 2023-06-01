@@ -1,34 +1,25 @@
 package com.example.usahayuk.data.remote
 
-import com.example.usahayuk.data.model.LoginResponse
-import com.example.usahayuk.data.model.RegisterResponse
-import com.example.usahayuk.data.model.UserResponse
+import com.example.usahayuk.data.model.*
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.Header
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface ApiService {
-    @FormUrlEncoded
     @POST("api/auth/signup")
-    fun register(
-        @Field("displayName") name :String,
-        @Field("email") email :String,
-        @Field("password") password :String,
-        @Field("phoneNumber") phoneNumber : Any
-    ): Call<RegisterResponse>
+    fun register(@Body request: RegisterRequest): Call<RegisterResponse>
 
-    @FormUrlEncoded
     @POST("api/auth/signin")
-    fun login(
-        @Field("email") email: String,
-        @Field("password") password: String
-    ): Call<LoginResponse>
+    fun login(@Body request: LoginRequest): Call<LoginResponse>
 
     fun getUser(
         @Header("Authorization") authToken: String
     ): Call<UserResponse>
+
+
+
+
+
+
 
 
 

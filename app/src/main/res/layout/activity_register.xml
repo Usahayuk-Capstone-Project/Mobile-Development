@@ -114,11 +114,34 @@
             android:inputType="textPassword"
             app:passwordToggleEnabled="true"
             tools:ignore="SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/confirmPasswordLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLayout">
+
+        <com.example.usahayuk.customview.CustomPassword
+            android:id="@+id/confirmPasswordEdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0"
+            android:ems="10"
+            android:hint="@string/konfirmasi_password"
+            android:inputType="textPassword"
+            app:passwordToggleEnabled="true"
+            tools:ignore="SpeakableTextPresentCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.example.usahayuk.customview.CustomButton
-        android:id="@+id/loginButton"
+        android:id="@+id/registerBtn"
         android:layout_width="345dp"
         android:layout_height="50dp"
         android:layout_marginTop="36dp"
@@ -130,26 +153,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/confirmPasswordLayout" />
 
-    <Button
-        android:id="@+id/btnRegisterGoogle"
-        android:layout_width="345dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="@color/white"
-        android:clickable="true"
-        android:drawableLeft="@drawable/google"
-        android:focusable="true"
-        android:textAllCaps="false"
-        android:fontFamily="@font/poppinsmedium"
-        android:gravity="center"
-        android:text="@string/daftarGoogle"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineHorizontal"
@@ -200,7 +206,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/haveAccount"
-        app:layout_constraintTop_toBottomOf="@+id/btnRegisterGoogle"
+        app:layout_constraintTop_toBottomOf="@+id/registerBtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 

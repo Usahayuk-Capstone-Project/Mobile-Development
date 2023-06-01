@@ -5,101 +5,99 @@ import com.google.gson.annotations.SerializedName
 data class LoginResponse(
 
 	@field:SerializedName("code")
-	val code: Int? = null,
+	val code: Int,
 
-	@field:SerializedName("userRecord")
-	val userRecord: UserRecord? = null
+	@field:SerializedName("userCredential")
+	val userCredential: UserRecord
 )
+
 
 data class StsTokenManager(
 
-	@field:SerializedName("apiKey")
-	val apiKey: String? = null,
-
 	@field:SerializedName("expirationTime")
-	val expirationTime: Long? = null,
+	val expirationTime: Long,
 
 	@field:SerializedName("accessToken")
-	val accessToken: String? = null,
+	val accessToken: String,
 
 	@field:SerializedName("refreshToken")
-	val refreshToken: String? = null
+	val refreshToken: String
 )
 
 data class UserRecord(
 
 	@field:SerializedName("apiKey")
-	val apiKey: String? = null,
+	val apiKey: String,
 
 	@field:SerializedName("providerData")
-	val providerData: List<ProviderDataItem?>? = null,
+	val providerData: List<ProviderDataItem>,
 
 	@field:SerializedName("displayName")
-	val displayName: String? = null,
+	val displayName: String,
 
 	@field:SerializedName("appName")
-	val appName: String? = null,
+	val appName: String,
 
 	@field:SerializedName("redirectEventId")
-	val redirectEventId: Any? = null,
+	val redirectEventId: Any,
 
 	@field:SerializedName("authDomain")
-	val authDomain: String? = null,
+	val authDomain: String,
 
 	@field:SerializedName("uid")
-	val uid: String? = null,
+	val uid: String,
 
 	@field:SerializedName("photoURL")
-	val photoURL: Any? = null,
+	val photoURL: Any,
 
 	@field:SerializedName("emailVerified")
-	val emailVerified: Boolean? = null,
+	val emailVerified: Boolean,
 
 	@field:SerializedName("createdAt")
-	val createdAt: String? = null,
+	val createdAt: String,
 
 	@field:SerializedName("isAnonymous")
-	val isAnonymous: Boolean? = null,
+	val isAnonymous: Boolean,
 
 	@field:SerializedName("stsTokenManager")
-	val stsTokenManager: StsTokenManager? = null,
+	val stsTokenManager: StsTokenManager,
 
 	@field:SerializedName("lastLoginAt")
-	val lastLoginAt: String? = null,
+	val lastLoginAt: String,
 
 	@field:SerializedName("multiFactor")
-	val multiFactor: MultiFactor? = null,
+	val multiFactor: MultiFactor,
 
 	@field:SerializedName("tenantId")
-	val tenantId: Any? = null,
+	val tenantId: Any,
 
 	@field:SerializedName("email")
-	val email: String? = null
+	val email: String
 )
 
 data class ProviderDataItem(
 
 	@field:SerializedName("uid")
-	val uid: String? = null,
+	val uid: String,
 
 	@field:SerializedName("photoURL")
-	val photoURL: Any? = null,
+	val photoURL: Any,
 
 	@field:SerializedName("phoneNumber")
-	val phoneNumber: Any? = null,
+	val phoneNumber: Any,
 
 	@field:SerializedName("displayName")
-	val displayName: String? = null,
+	val displayName: String,
 
 	@field:SerializedName("providerId")
-	val providerId: String? = null,
+	val providerId: String,
 
 	@field:SerializedName("email")
-	val email: String? = null
+	val email: String
 )
 
 data class MultiFactor(
 
 	@field:SerializedName("enrolledFactors")
-	val enrolledFactors: List<Any?>? = null
+	val enrolledFactors: List<Any>
 )
