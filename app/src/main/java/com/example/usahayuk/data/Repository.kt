@@ -8,6 +8,8 @@ import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.example.usahayuk.data.model.RegisterRequest
+import com.example.usahayuk.data.model.UpdateRequest
 import com.example.usahayuk.data.model.UserResponse
 import com.example.usahayuk.data.remote.ApiConfig
 import retrofit2.Call
@@ -21,8 +23,27 @@ class Repository(application: Application) {
         return user
     }
 
-    fun getUser(token: String) {
-        val client = ApiConfig.getApiService().getUser(token)
+    fun getUser(token: String, uid: String) {
+        val client = ApiConfig.getApiService().getUser("Bearer $token",uid)
+        client.enqueue(object : Callback<UserResponse> {
+            override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
+                if (response.isSuccessful) {
+                    user.postValue(response.body())
+                } else {
+                    Log.e(ContentValues.TAG, "onFailure: ${response.message()}")
+                }
+            }
+
+            @RequiresApi(Build.VERSION_CODES.R)
+            override fun onFailure(call: Call<UserResponse>, t: Throwable) {
+                Log.e(ControlsProviderService.TAG, "Failure: ${t.message}")
+            }
+        })
+    }
+
+    fun setUpdateUser(token: String, name: String, email: String) {
+        val updateRequest = UpdateRequest(token, name, email)
+        val client = ApiConfig.getApiService().updateUser(updateRequest)
         client.enqueue(object : Callback<UserResponse> {
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
                 if (response.isSuccessful) {

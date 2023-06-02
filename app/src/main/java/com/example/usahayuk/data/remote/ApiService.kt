@@ -11,9 +11,13 @@ interface ApiService {
     @POST("api/auth/signin")
     fun login(@Body request: LoginRequest): Call<LoginResponse>
 
+    @GET("api/user/{id}")
     fun getUser(
-        @Header("Authorization") authToken: String
+        @Header("Authorization") authToken: String,
+        @Path("id") id: String
     ): Call<UserResponse>
+
+    fun updateUser(@Body request: UpdateRequest): Call<UserResponse>
 
 
 

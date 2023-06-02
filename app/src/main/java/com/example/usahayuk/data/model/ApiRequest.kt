@@ -1,6 +1,8 @@
 package com.example.usahayuk.data.model
 
 import com.google.gson.annotations.SerializedName
+import retrofit2.http.Field
+import retrofit2.http.Header
 
 data class LoginRequest (
     @SerializedName("alamat_email") val email: String,
@@ -12,3 +14,10 @@ data class RegisterRequest(
     @SerializedName("alamat_email") val email: String,
     @SerializedName("kata_sandi") val password: String
 )
+
+data class UpdateRequest(
+    @SerializedName("Authorization") val authToken: String,
+    @SerializedName("displayName") val name: String,
+    @SerializedName("email") val email: String
+)
+

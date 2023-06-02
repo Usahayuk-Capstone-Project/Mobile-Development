@@ -31,6 +31,12 @@ class LoginPreferences private constructor(private val dataStore: DataStore<Pref
         }
     }
 
+    suspend fun logout() {
+        dataStore.edit { preferences ->
+            preferences.clear()
+        }
+    }
+
     companion object {
         @Volatile
         private var INSTANCE: LoginPreferences? = null
