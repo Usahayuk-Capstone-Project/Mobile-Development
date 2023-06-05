@@ -16,46 +16,47 @@
             android:id="@+id/img_avatar"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:src="@drawable/ic_circle_full_24"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="16dp"
+            tools:src="@drawable/ic_circle_full_24" />
+
         <TextView
             android:id="@+id/name_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fullname"
-            android:textColor="@color/white"
+            android:layout_marginTop="4dp"
             android:fontFamily="@font/poppinsbold"
-            app:layout_constraintTop_toBottomOf="@+id/img_avatar"
-            android:layout_marginTop="8dp"
+            android:textColor="@color/white"
             android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@+id/img_avatar" />
 
         <TextView
             android:id="@+id/email_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="email"
-            android:textColor="@color/white"
+            android:layout_marginTop="3dp"
             android:fontFamily="@font/poppinsmedium"
-            app:layout_constraintTop_toBottomOf="@+id/name_profile"
-            android:layout_marginTop="8dp"
+            android:textColor="@color/white"
             android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@+id/name_profile" />
 
         <TextView
             android:id="@+id/profile_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Profile"
+            android:layout_marginTop="32dp"
             android:fontFamily="@font/poppinsbold"
-            app:layout_constraintTop_toBottomOf="@+id/email_profile"
-            android:layout_marginTop="48dp"
+            android:text="Profile"
             android:textSize="20sp"
-            android:layout_marginStart="24dp"
+            app:layout_constraintStart_toStartOf="@+id/pengaturanAccbtn"
+            app:layout_constraintTop_toBottomOf="@+id/email_profile"
             tools:ignore="MissingConstraints" />
 
         <Button

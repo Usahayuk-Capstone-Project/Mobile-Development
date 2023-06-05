@@ -8,7 +8,6 @@ import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.usahayuk.data.model.RegisterRequest
 import com.example.usahayuk.data.model.UpdateRequest
 import com.example.usahayuk.data.model.UserResponse
 import com.example.usahayuk.data.remote.ApiConfig
@@ -41,9 +40,9 @@ class Repository(application: Application) {
         })
     }
 
-    fun setUpdateUser(token: String, name: String, email: String) {
+    fun setUpdateUser(token: String, uid:String, name: String, email: String) {
         val updateRequest = UpdateRequest(token, name, email)
-        val client = ApiConfig.getApiService().updateUser(updateRequest)
+        val client = ApiConfig.getApiService().updateProfile(uid,updateRequest)
         client.enqueue(object : Callback<UserResponse> {
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
                 if (response.isSuccessful) {

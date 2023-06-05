@@ -17,7 +17,11 @@ interface ApiService {
         @Path("id") id: String
     ): Call<UserResponse>
 
-    fun updateUser(@Body request: UpdateRequest): Call<UserResponse>
+    @PUT("api/user/{id}")
+    fun updateProfile(
+        @Path("id") id: String,
+        @Body request: UpdateRequest
+    ): Call<UserResponse>
 
 
 

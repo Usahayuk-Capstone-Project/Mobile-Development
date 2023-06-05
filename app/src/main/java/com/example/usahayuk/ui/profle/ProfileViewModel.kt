@@ -19,5 +19,5 @@ class ProfileViewModel (application: Application) : AndroidViewModel(application
 
     fun getUser(token: String, uid : String) = mRepository.getUser(token, uid)
 
-    fun setUpdateUser(token: String, name: String, email: String) = mRepository
+    fun setUpdateUser(token: String, uid: String,name: String, email: String) = mRepository.setUpdateUser(token,uid, name, email)
 }

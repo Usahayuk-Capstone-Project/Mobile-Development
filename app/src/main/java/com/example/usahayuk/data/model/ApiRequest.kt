@@ -17,7 +17,7 @@ data class RegisterRequest(
 
 data class UpdateRequest(
     @SerializedName("Authorization") val authToken: String,
-    @SerializedName("displayName") val name: String,
-    @SerializedName("email") val email: String
+    @SerializedName("nama_lengkap") val name: String,
+    @SerializedName("alamat_email") val email: String
 )
 
