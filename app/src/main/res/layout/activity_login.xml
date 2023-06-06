@@ -123,20 +123,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/seePassword" />
 
-    <Button
-        android:id="@+id/btnRegister"
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/signin_google"
         android:layout_width="345dp"
         android:layout_height="50dp"
+        app:buttonSize="wide"
         android:layout_marginTop="12dp"
-        android:backgroundTint="@color/white"
-        android:clickable="true"
-        android:drawableLeft="@drawable/google"
-        android:textAllCaps="false"
-        android:focusable="true"
         android:fontFamily="@font/poppinsmedium"
-        android:gravity="center"
-        android:text="@string/masukgoogle"
-        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -191,7 +184,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="@string/registerInfo"
-            app:layout_constraintTop_toBottomOf="@+id/btnRegister"
+            app:layout_constraintTop_toBottomOf="@+id/signin_google"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             tools:ignore="MissingConstraints" />

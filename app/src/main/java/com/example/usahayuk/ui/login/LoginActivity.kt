@@ -18,6 +18,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
+import com.example.usahayuk.R
 import com.example.usahayuk.Utils
 import com.example.usahayuk.ViewModelFactory
 import com.example.usahayuk.data.local.datastore.LoginPreferences
@@ -28,6 +29,7 @@ import com.example.usahayuk.data.remote.ApiConfig
 import com.example.usahayuk.ui.register.RegisterActivity
 import com.example.usahayuk.databinding.ActivityLoginBinding
 import com.example.usahayuk.ui.MainActivity
+import com.google.android.gms.common.SignInButton
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -41,6 +43,8 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar!!.hide()
+        val signInButton: SignInButton = findViewById(R.id.signin_google)
+        signInButton.setSize(SignInButton.SIZE_WIDE)
         playAnimation()
         setupAction()
         setupInput()
@@ -178,7 +182,7 @@ class LoginActivity : AppCompatActivity() {
         val passwordEdt =
             ObjectAnimator.ofFloat(binding.inputPassword, View.ALPHA, 1f).setDuration(500)
         val login = ObjectAnimator.ofFloat(binding.loginButton, View.ALPHA, 1f).setDuration(500)
-        val signup = ObjectAnimator.ofFloat(binding.btnRegister, View.ALPHA, 1f).setDuration(500)
+        val signup = ObjectAnimator.ofFloat(binding.signinGoogle, View.ALPHA, 1f).setDuration(500)
 
         val together = AnimatorSet().apply {
             playTogether(emailEdt, passwordEdt)

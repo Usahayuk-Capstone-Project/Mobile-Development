@@ -4,22 +4,26 @@
     <item
         android:id="@+id/beranda"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_home_24"
+        android:icon="@drawable/beranda"
         android:title="@string/beranda"
+        android:titleCondensed="@string/beranda"
         />
     <item
         android:id="@+id/komunitas"
         android:enabled="true"
-        android:icon="@drawable/ic_groups_24"
-        android:title="@string/komunitas" />
+        android:icon="@drawable/komunitas"
+        android:title="@string/komunitas"
+        android:titleCondensed="@string/komunitas"/>
     <item
-        android:id="@+id/usahaku"
+        android:id="@+id/konsultasi"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_chart_24"
-        android:title="@string/usahaku" />
+        android:icon="@drawable/konsultasi"
+        android:title="@string/konsultasi"
+        android:titleCondensed="@string/konsultasi"/>
     <item
         android:id="@+id/profil"
         android:enabled="true"
-        android:icon="@drawable/ic_navbar_person_24"
-        android:title="@string/profil" />
+        android:icon="@drawable/profil"
+        android:title="@string/profil"
+        android:titleCondensed="@string/profil"/>
 </menu>

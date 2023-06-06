@@ -21,7 +21,7 @@
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteY="16dp"
-            tools:src="@drawable/ic_circle_full_24" />
+            tools:src="@drawable/sample_avatar" />
 
         <TextView
             android:id="@+id/name_profile"

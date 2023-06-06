@@ -8,7 +8,6 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.bumptech.glide.util.Util
 import com.example.usahayuk.R
 import com.example.usahayuk.Utils
 import com.example.usahayuk.Utils.token
@@ -17,7 +16,7 @@ import com.example.usahayuk.data.local.datastore.LoginPreferences
 import com.example.usahayuk.databinding.ActivityMainBinding
 import com.example.usahayuk.ui.community.KomunitasFragment
 import com.example.usahayuk.ui.home.HomeFragment
-import com.example.usahayuk.ui.mybussiness.UsahakuFragment
+import com.example.usahayuk.ui.konsultasi.KonsultasiFragment
 import com.example.usahayuk.ui.profle.ProfileFragment
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
@@ -37,7 +36,7 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.beranda -> replaceFragment(HomeFragment())
                 R.id.komunitas -> replaceFragment(KomunitasFragment())
-                R.id.usahaku -> replaceFragment(UsahakuFragment())
+                R.id.konsultasi -> replaceFragment(KonsultasiFragment())
                 R.id.profil -> replaceFragment(ProfileFragment())
                 else -> {
                 }
@@ -53,6 +52,7 @@ class MainActivity : AppCompatActivity() {
             this,
             ViewModelFactory(LoginPreferences.getInstance(dataStore))
         )[MainViewModel::class.java]
+
         var name: String
         mainViewModel.getUser().observe(this){ user ->
             Utils.token = "Bearer ${user.token}"

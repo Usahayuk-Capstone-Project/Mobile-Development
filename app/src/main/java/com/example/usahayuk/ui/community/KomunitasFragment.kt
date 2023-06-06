@@ -36,7 +36,7 @@ class KomunitasFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val fragmentTitle = "Komunitas"
         activity?.title = fragmentTitle
-        (activity as AppCompatActivity).supportActionBar?.show()
+        (activity as AppCompatActivity).supportActionBar?.hide()
     }
 
     companion object {

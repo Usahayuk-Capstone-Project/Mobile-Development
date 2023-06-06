@@ -17,7 +17,7 @@
             android:name=".ui.community.DetailArticleActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.mybussiness.DetailUsahaActivity"
+            android:name=".ui.konsultasi.DetailKonsultasiActivity"
             android:exported="false" />
         <activity
             android:name=".ui.home.FormActivity"

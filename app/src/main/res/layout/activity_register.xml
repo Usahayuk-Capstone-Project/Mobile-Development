@@ -149,12 +149,12 @@
         android:textAllCaps="false"
         android:backgroundTint="@color/green_main"
         android:fontFamily="@font/poppinsmedium"
+        android:textSize="16sp"
         android:text="@string/login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/confirmPasswordLayout" />
-
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -164,7 +164,7 @@
         android:alpha="0"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_begin="218dp"
+        app:layout_constraintGuide_begin="198dp"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline

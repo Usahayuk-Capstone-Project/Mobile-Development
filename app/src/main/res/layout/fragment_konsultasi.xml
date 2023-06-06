@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/green_surface">
 
     <FrameLayout
@@ -12,34 +13,34 @@
         android:layout_height="80dp"
         android:background="@drawable/background_title"
         tools:ignore="MissingConstraints">
-        <TextView
-            android:id="@+id/komunitas_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/poppinsbold"
-            android:text="Komunitas"
-            android:textColor="@color/white"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+    <TextView
+        android:id="@+id/konsul_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Konsultasi"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
     </FrameLayout>
 
     <TextView
-        android:id="@+id/komunitas_title2"
+        android:id="@+id/konsul_title2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="48dp"
-        android:layout_marginEnd="210dp"
+        android:layout_marginEnd="24dp"
         android:layout_marginBottom="759dp"
         android:fontFamily="@font/poppinsbold"
-        android:text="Temukan Saran di komunitas"
+        android:text="Konsultasikan Usahamu Yuk!"
         android:textColor="@color/green_main"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -49,7 +50,19 @@
         app:layout_constraintTop_toBottomOf="@+id/background_title"
         app:layout_constraintVertical_bias="0.166" />
 
-
+    <TextView
+        android:id="@+id/konsul_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="Beberapa mentor berpengalaman kami akan membantu untuk akselerasikan usahamu"
+        android:fontFamily="@font/poppinsmedium"
+        android:textColor="@color/green_main"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/konsul_title2" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_story"
         android:layout_width="0dp"
@@ -62,7 +75,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/komunitas_title2"
-        tools:listitem="@layout/item_komunitas"/>
+        app:layout_constraintTop_toBottomOf="@+id/konsul_desc"
+        tools:listitem="@layout/item_konsul"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
