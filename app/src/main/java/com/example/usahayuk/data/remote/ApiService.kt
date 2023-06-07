@@ -23,6 +23,13 @@ interface ApiService {
         @Body request: UpdateRequest
     ): Call<UserResponse>
 
+    @POST("api/recommender/{id}")
+    fun postData(
+        @Header("Authorization") authToken: String,
+        @Path("id") id: String,
+        @Body request: PostDataRequest
+    ): Call<RecomenderResponse>
+
 
 
 

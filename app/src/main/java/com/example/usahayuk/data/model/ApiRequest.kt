@@ -21,3 +21,16 @@ data class UpdateRequest(
     @SerializedName("alamat_email") val email: String
 )
 
+data class PostDataRequest(
+    @SerializedName("skala_usaha") val skalaUsaha: String,
+    @SerializedName("modal_usaha") val modalUsaha: String,
+    @SerializedName("jenis_usaha") val jenisUsaha: String,
+    @SerializedName("jenis_lokasi") val jenisLokasi: String,
+    @SerializedName("gender_targetpelanggan") val genderTargetpelanggan: String,
+    @SerializedName("bidang_usaha") val bidangUsaha: String,
+    @SerializedName("status_targetpelanggan") val statusTargetpelanggan: List<String>,
+    @SerializedName("omset_usaha") val omsetUsaha: String,
+    @SerializedName("usia_targetpelanggan") val usiaTargetpelanggan: List<String>,
+    @SerializedName("perkerjaan_targetpelanggan") val perkerjaanTargetpelanggan: List<String>
+)
+

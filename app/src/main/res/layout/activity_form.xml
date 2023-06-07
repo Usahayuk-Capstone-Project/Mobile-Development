@@ -54,21 +54,25 @@
             app:layout_constraintTop_toBottomOf="@id/textView10">
 
             <RadioButton
+                android:id="@+id/rb_mikro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="@string/mikro"/>
+
             <RadioButton
+                android:id="@+id/rb_kecil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="@string/kecil"/>
+
             <RadioButton
+                android:id="@+id/rb_menengah"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="@string/menengah"/>
-
         </RadioGroup>
 
         <TextView
@@ -92,36 +96,43 @@
             app:layout_constraintTop_toBottomOf="@id/textView11">
 
             <RadioButton
+                android:id="@+id/rb_3_juta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="@string/_3_juta"/>
             <RadioButton
+                android:id="@+id/rb_3_5_juta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="@string/_3_5_juta"/>
             <RadioButton
+                android:id="@+id/rb_5_10_juta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="@string/_5_10_juta"/>
             <RadioButton
+                android:id="@+id/rb_10_30_juta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="@string/_10_30_juta"/>
             <RadioButton
+                android:id="@+id/rb_30_50_juta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="@string/_30_50_juta"/>
             <RadioButton
+                android:id="@+id/rb_50_500_juta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="@string/_50_500_juta"/>
             <RadioButton
+                android:id="@+id/rb_1_miliar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
@@ -149,66 +160,79 @@
             app:layout_constraintTop_toBottomOf="@id/textView12">
 
             <RadioButton
+                android:id="@+id/rb_pertanian_perkebunan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="@string/pertanian_dan_perkebunan"/>
             <RadioButton
+                android:id="@+id/rb_perikanan_kelautan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="@string/perikanan_dan_kelautan"/>
             <RadioButton
+                android:id="@+id/rb_industri_makanan_minuman"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="@string/industri_makanan_dan_minuman"/>
             <RadioButton
+                android:id="@+id/rb_industri_fashion_tekstil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="@string/industri_fashion_dan_tekstil"/>
             <RadioButton
+                android:id="@+id/rb_industri_kerajinan_souvenir"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="@string/industri_kerajinan_tangan_dan_souvenir"/>
             <RadioButton
+                android:id="@+id/rb_pendidikan_pelatihan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="@string/pendidikan_dan_pelatihan"/>
             <RadioButton
+                android:id="@+id/rb_jasa_kesehatan_kecantikan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="@string/jasa_kesehatan_dan_kecantikan"/>
             <RadioButton
+                android:id="@+id/rb_jasa_keuangan_perbankan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="@string/jasa_keuangan_dan_perbankan"/>
             <RadioButton
+                android:id="@+id/rb_jasa_konsultasi_manajemen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="@string/jasa_konsultasi_dan_manajemen"/>
             <RadioButton
+                android:id="@+id/rb_jasa_teknologi_informasi_komunikasi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="@string/jasa_teknologi_informasi_dan_komunikasi"/>
             <RadioButton
+                android:id="@+id/rb_jasa_kebersihan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="@string/jasa_kebersihan"/>
             <RadioButton
+                android:id="@+id/rb_jasa_keamanan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="@string/jasa_keamanan"/>
             <RadioButton
+                android:id="@+id/rb_otomotif"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
@@ -226,6 +250,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/rg_bidangusaha"
             />
+
         <RadioGroup
             android:id="@+id/rg_omsetusaha"
             android:layout_width="wrap_content"
@@ -235,31 +260,37 @@
             app:layout_constraintTop_toBottomOf="@id/textView13">
 
             <RadioButton
+                android:id="@+id/rb_0_10_juta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="@string/_0_10_juta"/>
             <RadioButton
+                android:id="@+id/rb_11_20_juta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="@string/_11_20_juta"/>
             <RadioButton
+                android:id="@+id/rb_21_30_juta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="@string/_21_30_juta"/>
             <RadioButton
+                android:id="@+id/rb_31_40_juta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="@string/_31_40_juta"/>
             <RadioButton
+                android:id="@+id/rb_41_50_juta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:text="@string/_41_50_juta"/>
             <RadioButton
+                android:id="@+id/rb_50_juta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
