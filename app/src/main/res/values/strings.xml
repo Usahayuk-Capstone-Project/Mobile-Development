@@ -33,7 +33,7 @@
     <string name="komunitas">Komunitas</string>
     <string name="konsultasi">Konsultasi</string>
     <string name="profil">Profil</string>
-    <string name="welcome_text">Selamat Pagi, Zabran</string>
+    <string name="welcome_text">Selamat Datang,</string>
     <string name="rekomen_title">Cari Rekomendasi Usaha Anda</string>
     <string name="find_recomend">Mulai Usahayuk</string>
     <string name="tittle2">Kenapa Harus Mulai Usaha ?</string>
@@ -136,6 +136,7 @@
     <string name="isiArtikel">Di era digital yang semakin maju ini, UMKM (Usaha Mikro, Kecil, dan Menengah) memiliki kesempatan besar untuk mengembangkan bisnis mereka secara signifikan. Teknologi dan akses internet yang luas telah memberikan peluang baru bagi UMKM untuk menjangkau pasar yang lebih luas dan meningkatkan efisiensi operasional mereka. Namun, untuk mencapai kesuksesan di era digital, UMKM perlu mengadopsi strategi yang tepat. Artikel ini akan membahas beberapa strategi pengembangan bisnis UMKM yang sukses di era digital.</string>
     <string name="konfirmasi_password">Konfirmasi Password</string>
     <string name="pass_salah">Password tidak cocok</string>
+    <string name="greeting">Selamat Datang, %1$s</string>
 
 
 </resources>

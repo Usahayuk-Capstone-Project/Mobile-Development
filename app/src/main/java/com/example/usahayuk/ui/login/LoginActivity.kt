@@ -18,7 +18,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
-import com.example.usahayuk.R
+import androidx.lifecycle.lifecycleScope
 import com.example.usahayuk.Utils
 import com.example.usahayuk.ViewModelFactory
 import com.example.usahayuk.data.local.datastore.LoginPreferences
@@ -29,7 +29,7 @@ import com.example.usahayuk.data.remote.ApiConfig
 import com.example.usahayuk.ui.register.RegisterActivity
 import com.example.usahayuk.databinding.ActivityLoginBinding
 import com.example.usahayuk.ui.MainActivity
-import com.google.android.gms.common.SignInButton
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -43,13 +43,28 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar!!.hide()
-        val signInButton: SignInButton = findViewById(R.id.signin_google)
-        signInButton.setSize(SignInButton.SIZE_WIDE)
         playAnimation()
         setupAction()
         setupInput()
         setupViewModel()
+
+        lifecycleScope.launch {
+            loginViewModel.getUser().collect { user ->
+                if (user.isLogin) {
+                    // User is already logged in, navigate to home fragment
+                    navigateToHomeFragment()
+                }
+            }
+        }
     }
+
+    private fun navigateToHomeFragment() {
+        val intent = Intent(this@LoginActivity, MainActivity::class.java)
+        intent.putExtra("showHomeFragment", true)
+        startActivity(intent)
+        finish()
+    }
+
     private fun setupAction(){
         binding.loginButton.setOnClickListener {
             val email = binding.inputEmail.text.toString()
@@ -114,11 +129,8 @@ class LoginActivity : AppCompatActivity() {
                             true
                         )
                     )
-                    savePref()
                     Toast.makeText(this@LoginActivity, "Login Sudah Berhasil", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                    intent.putExtra("showHomeFragment", true)
-                    startActivity(intent)
+                    navigateToHomeFragment()
                 }else {
                     isLoading(false)
                     Toast.makeText(this@LoginActivity, "Email atau Password anda salah",Toast.LENGTH_SHORT).show()
@@ -134,13 +146,7 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    private fun savePref(){
-        val sharedPreferences = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
-        val edit = sharedPreferences.edit()
-        edit.apply {
-            putString("STRING_KEY", "login")
-        }.apply()
-    }
+
 
     private fun setupInput(){
         val loginTextWatcher = object : TextWatcher {
@@ -182,14 +188,13 @@ class LoginActivity : AppCompatActivity() {
         val passwordEdt =
             ObjectAnimator.ofFloat(binding.inputPassword, View.ALPHA, 1f).setDuration(500)
         val login = ObjectAnimator.ofFloat(binding.loginButton, View.ALPHA, 1f).setDuration(500)
-        val signup = ObjectAnimator.ofFloat(binding.signinGoogle, View.ALPHA, 1f).setDuration(500)
 
         val together = AnimatorSet().apply {
             playTogether(emailEdt, passwordEdt)
         }
 
         AnimatorSet().apply {
-            playSequentially(title, message, together, login, signup)
+            playSequentially(title, message, together, login)
             start()
         }
     }

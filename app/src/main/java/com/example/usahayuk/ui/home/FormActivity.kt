@@ -1,18 +1,25 @@
 package com.example.usahayuk.ui.home
 
-import android.net.http.SslCertificate.saveState
-import androidx.appcompat.app.AppCompatActivity
+import android.content.ContentValues
+import android.os.Build
 import android.os.Bundle
+import android.service.controls.ControlsProviderService
+import android.util.Log
+import android.view.View
 import android.widget.CheckBox
-import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
-import com.bumptech.glide.util.Util
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import com.example.usahayuk.R
 import com.example.usahayuk.Utils
 import com.example.usahayuk.data.model.PostDataRequest
+import com.example.usahayuk.data.model.RecomenderResponse
 import com.example.usahayuk.data.remote.ApiConfig
 import com.example.usahayuk.databinding.ActivityFormBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class FormActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFormBinding
@@ -20,6 +27,8 @@ class FormActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityFormBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        supportActionBar?.hide()
 
         setupAction()
     }
@@ -38,30 +47,32 @@ class FormActivity : AppCompatActivity() {
             val listKelasSosial: List<String> = pilihKelasSosial.split(",").toList()
             val lokasi = pilihLokasi()
             val listLokasi: List<String> = lokasi.split(",").toList()
+            val targetGender = targetGender()
+            val listGender: List<String> = targetGender.split(",").toList()
 
             when {
-                skalaUsaha!!.isEmpty() -> {
+                skalaUsaha.isNullOrEmpty() -> {
                     Toast.makeText(
                         this@FormActivity,
                         "Pilih Skala usaha",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
-                modalUsaha.isEmpty() -> {
+                modalUsaha.isNullOrEmpty() -> {
                     Toast.makeText(
                         this@FormActivity,
                         "Pilih Modal usaha",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
-                bidangUsaha.isEmpty() -> {
+                bidangUsaha.isNullOrEmpty() -> {
                     Toast.makeText(
                         this@FormActivity,
                         "Pilih Bidang usaha",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
-                omsetUsaha.isEmpty() -> {
+                omsetUsaha.isNullOrEmpty() -> {
                     Toast.makeText(
                         this@FormActivity,
                         "Pilih Omset usaha",
@@ -96,6 +107,13 @@ class FormActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
                 }
+                targetGender.isEmpty() -> {
+                    Toast.makeText(
+                        this@FormActivity,
+                        "Pilih TargetGender",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
                 else -> {
                     postData(
                         Utils.token,
@@ -107,10 +125,11 @@ class FormActivity : AppCompatActivity() {
                         listUsiaTarget,
                         listTargetPekerjaan,
                         listKelasSosial,
-                        listLokasi
+                        listLokasi,
+                        listGender,
                     )
-                    Toast.makeText(this, Utils.EXTRA_UID, Toast.LENGTH_SHORT).show()
-                    saveState()
+                    isloading(true)
+                    Toast.makeText(this, "Data Sedang Dikirim", Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -119,7 +138,7 @@ class FormActivity : AppCompatActivity() {
 
     private fun postData(
         token: String,
-        extraUid: String,
+        uid: String,
         skalaUsaha: String,
         modalUsaha: String,
         bidangUsaha: String,
@@ -127,87 +146,124 @@ class FormActivity : AppCompatActivity() {
         listUsiaTarget: List<String>,
         listTargetPekerjaan: List<String>,
         listKelasSosial: List<String>,
-        listLokasi: List<String>
+        listLokasi: List<String>,
+        listGender: List<String>
     ) {
-        isLoading(true)
-        val dataRequest = PostDataRequest(token, skalaUsaha, modalUsaha, bidangUsaha, omsetUsaha, listTargetPekerjaan,listKelasSosial,listLokasi )
-        val client = ApiConfig.getApiService().postData()
+        isloading(true)
+        val dataRequest = PostDataRequest(
+            skalaUsaha,
+            modalUsaha,
+            bidangUsaha,
+            listLokasi,
+            listGender,
+            bidangUsaha,
+            listKelasSosial,
+            omsetUsaha,
+            listUsiaTarget,
+            listTargetPekerjaan
+        )
+        val client = ApiConfig.getApiService().postData(token, uid, dataRequest)
+        client.enqueue(object : Callback<RecomenderResponse> {
+            override fun onResponse(
+                call: Call<RecomenderResponse>,
+                response: Response<RecomenderResponse>
+            ) {
+                val responseBody = response.body()
+                if (response.isSuccessful && responseBody != null) {
+                    if (responseBody.code != 200) {
+                        isloading(true)
+                        Toast.makeText(
+                            this@FormActivity,
+                            "Data Berhasil Dikirim",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    } else {
+                        isloading(false)
+                        Toast.makeText(
+                            this@FormActivity,
+                            "Data Gagal Dikirim",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                } else {
+                    isloading(false)
+                    Log.e(ContentValues.TAG, "onFailure: ${response.message()}")
+                }
+            }
+
+            @RequiresApi(Build.VERSION_CODES.R)
+            override fun onFailure(call: Call<RecomenderResponse>, t: Throwable) {
+                Log.e(ControlsProviderService.TAG, "Failure: ${t.message}")
+            }
+
+        })
+    }
+
+    private fun isloading(it: Boolean) {
+        binding.progressBar.visibility = if (it) View.VISIBLE else View.INVISIBLE
     }
 
     private fun skalaUsaha(): String? {
         val radioGroup: RadioGroup = binding.rgSkalausaha
-        var skalaUsaha: String? = null
 
-        // Set a listener for radio group
-        radioGroup.setOnCheckedChangeListener { _, checkedId ->
-            when (checkedId) {
-                R.id.rb_mikro -> skalaUsaha = "Mikro"
-                R.id.rb_kecil -> skalaUsaha = "Kecil"
-                R.id.rb_menengah -> skalaUsaha = "Menengah"
-            }
+        return when (radioGroup.checkedRadioButtonId) {
+            R.id.rb_mikro -> "Mikro"
+            R.id.rb_kecil -> "Kecil"
+            R.id.rb_menengah -> "Menengah"
+            else -> null
         }
-        return skalaUsaha
     }
 
     private fun modalUsaha(): String? {
         val radioGroup: RadioGroup = binding.rgModalusaha
-        var modalUsaha: String? = null
 
         // Set a listener for radio group
-        radioGroup.setOnCheckedChangeListener { _, checkedId ->
-            when (checkedId) {
-                R.id.rb_3_juta -> modalUsaha = "<= 3 JT"
-                R.id.rb_3_5_juta -> modalUsaha = "3 - 5 JT"
-                R.id.rb_5_10_juta -> modalUsaha = "5 - 10 JT"
-                R.id.rb_10_30_juta -> modalUsaha = "10 - 30 JT"
-                R.id.rb_30_50_juta -> modalUsaha = "30 - 50 JT"
-                R.id.rb_50_500_juta -> modalUsaha = "50 - 500 JT"
-                R.id.rb_1_miliar -> modalUsaha = "<= 1 M"
-
-            }
+        return when (radioGroup.checkedRadioButtonId) {
+            R.id.rb_3_juta -> "<= 3 JT"
+            R.id.rb_3_5_juta -> "3 - 5 JT"
+            R.id.rb_5_10_juta -> "5 - 10 JT"
+            R.id.rb_10_30_juta -> "10 - 30 JT"
+            R.id.rb_30_50_juta -> "30 - 50 JT"
+            R.id.rb_50_500_juta -> "50 - 500 JT"
+            R.id.rb_1_miliar -> "<= 1 M"
+            else -> null
         }
-        return modalUsaha
     }
+
 
     private fun bidangUsaha(): String? {
         val radioGroup: RadioGroup = binding.rgBidangusaha
-        var bidangUsaha: String? = null
 
-        radioGroup.setOnCheckedChangeListener { _, checkedId ->
-            when (checkedId) {
-                R.id.rb_pertanian_perkebunan -> getString(R.string.pertanian_dan_perkebunan)
-                R.id.rb_perikanan_kelautan -> getString(R.string.perikanan_dan_kelautan)
-                R.id.rb_industri_makanan_minuman -> getString(R.string.industri_makanan_dan_minuman)
-                R.id.rb_industri_fashion_tekstil -> getString(R.string.industri_fashion_dan_tekstil)
-                R.id.rb_industri_kerajinan_souvenir -> getString(R.string.industri_kerajinan_tangan_dan_souvenir)
-                R.id.rb_pendidikan_pelatihan -> getString(R.string.pendidikan_dan_pelatihan)
-                R.id.rb_jasa_kesehatan_kecantikan -> getString(R.string.jasa_kesehatan_dan_kecantikan)
-                R.id.rb_jasa_keuangan_perbankan -> getString(R.string.jasa_keuangan_dan_perbankan)
-                R.id.rb_jasa_konsultasi_manajemen -> getString(R.string.jasa_konsultasi_dan_manajemen)
-                R.id.rb_jasa_teknologi_informasi_komunikasi -> getString(R.string.jasa_teknologi_informasi_dan_komunikasi)
-                R.id.rb_jasa_kebersihan -> getString(R.string.jasa_kebersihan)
-                R.id.rb_jasa_keamanan -> getString(R.string.jasa_keamanan)
-                R.id.rb_otomotif -> getString(R.string.otomotif)
-            }
+        return when (radioGroup.checkedRadioButtonId) {
+            R.id.rb_pertanian_perkebunan -> getString(R.string.pertanian_dan_perkebunan)
+            R.id.rb_perikanan_kelautan -> getString(R.string.perikanan_dan_kelautan)
+            R.id.rb_industri_makanan_minuman -> getString(R.string.industri_makanan_dan_minuman)
+            R.id.rb_industri_fashion_tekstil -> getString(R.string.industri_fashion_dan_tekstil)
+            R.id.rb_industri_kerajinan_souvenir -> getString(R.string.industri_kerajinan_tangan_dan_souvenir)
+            R.id.rb_pendidikan_pelatihan -> getString(R.string.pendidikan_dan_pelatihan)
+            R.id.rb_jasa_kesehatan_kecantikan -> getString(R.string.jasa_kesehatan_dan_kecantikan)
+            R.id.rb_jasa_keuangan_perbankan -> getString(R.string.jasa_keuangan_dan_perbankan)
+            R.id.rb_jasa_konsultasi_manajemen -> getString(R.string.jasa_konsultasi_dan_manajemen)
+            R.id.rb_jasa_teknologi_informasi_komunikasi -> getString(R.string.jasa_teknologi_informasi_dan_komunikasi)
+            R.id.rb_jasa_kebersihan -> getString(R.string.jasa_kebersihan)
+            R.id.rb_jasa_keamanan -> getString(R.string.jasa_keamanan)
+            R.id.rb_otomotif -> getString(R.string.otomotif)
+            else -> null
         }
-        return bidangUsaha
     }
 
     private fun omsetUsaha(): String? {
         val radioGroup: RadioGroup = binding.rgOmsetusaha
-        var omsetUsaha: String? = null
 
-        radioGroup.setOnCheckedChangeListener { _, checkedId ->
-            when (checkedId) {
-                R.id.rb_0_10_juta -> getString(R.string._0_10_juta)
-                R.id.rb_11_20_juta -> getString(R.string._11_20_juta)
-                R.id.rb_21_30_juta -> getString(R.string._21_30_juta)
-                R.id.rb_31_40_juta -> getString(R.string._31_40_juta)
-                R.id.rb_41_50_juta -> getString(R.string._41_50_juta)
-                R.id.rb_50_juta -> getString(R.string._50_juta)
-            }
+        return when (radioGroup.checkedRadioButtonId) {
+            R.id.rb_0_10_juta -> getString(R.string._0_10_juta)
+            R.id.rb_11_20_juta -> getString(R.string._11_20_juta)
+            R.id.rb_21_30_juta -> getString(R.string._21_30_juta)
+            R.id.rb_31_40_juta -> getString(R.string._31_40_juta)
+            R.id.rb_41_50_juta -> getString(R.string._41_50_juta)
+            R.id.rb_50_juta -> getString(R.string._50_juta)
+            else -> null
         }
-        return omsetUsaha
     }
 
     private fun usiaTarget(): StringBuilder {
@@ -260,6 +316,20 @@ class FormActivity : AppCompatActivity() {
         }
 
         return usiaTarget
+    }
+
+    private fun targetGender(): String {
+        val targetGender = mutableListOf<String>()
+
+        if (binding.cbLakiLaki.isChecked) {
+            targetGender.add(getString(R.string.laki_laki))
+        }
+
+        if (binding.cbPerempuan.isChecked) {
+            targetGender.add(getString(R.string.perempuan))
+        }
+
+        return targetGender.joinToString(", ")
     }
 
     private fun targetPekerjaan(): StringBuilder {

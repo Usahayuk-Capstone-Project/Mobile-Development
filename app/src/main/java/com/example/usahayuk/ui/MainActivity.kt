@@ -1,6 +1,7 @@
 package com.example.usahayuk.ui
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.datastore.core.DataStore
@@ -12,6 +13,7 @@ import com.example.usahayuk.R
 import com.example.usahayuk.Utils
 import com.example.usahayuk.Utils.token
 import com.example.usahayuk.ViewModelFactory
+import com.example.usahayuk.WelcomeActivity
 import com.example.usahayuk.data.local.datastore.LoginPreferences
 import com.example.usahayuk.databinding.ActivityMainBinding
 import com.example.usahayuk.ui.community.KomunitasFragment
@@ -52,10 +54,17 @@ class MainActivity : AppCompatActivity() {
             this,
             ViewModelFactory(LoginPreferences.getInstance(dataStore))
         )[MainViewModel::class.java]
-
+        mainViewModel.getUser().observe(this) { user ->
+            if (user.isLogin) {
+                replaceFragment(HomeFragment())
+            } else {
+                intent = Intent(this@MainActivity, WelcomeActivity::class.java)
+                startActivity(intent)
+            }
+        }
         var name: String
         mainViewModel.getUser().observe(this){ user ->
-            Utils.token = "Bearer ${user.token}"
+            token = "Bearer ${user.token}"
             name = user.name
             Utils.EXTRA_UID = user.uid
 

@@ -17,6 +17,8 @@ class ProfileViewModel (application: Application) : AndroidViewModel(application
 
     fun setUser(): LiveData<UserResponse>{ return mRepository.setUser()}
 
+
+
     fun getUser(token: String, uid : String) = mRepository.getUser(token, uid)
 
     fun setUpdateUser(token: String, uid: String,name: String, email: String) = mRepository.setUpdateUser(token,uid, name, email)
