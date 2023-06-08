@@ -137,6 +137,20 @@
     <string name="konfirmasi_password">Konfirmasi Password</string>
     <string name="pass_salah">Password tidak cocok</string>
     <string name="greeting">Selamat Datang, %1$s</string>
+    <string name="profile">Profile</string>
+    <string name="pengaturan_akun">Pengaturan Akun</string>
+    <string name="pengaturan_bahasa">Pengaturan Bahasa</string>
+    <string name="tentang_kami">Tentang Kami</string>
+    <string name="artikel_title">Strategi pengembangan bisnis UMKM yang sukses di era digital</string>
+    <string name="artikel_author">Ryan Andrayadi Kusyanto</string>
+    <string name="baca_selengkapnya">Baca Selengkapnya</string>
+    <string name="nama_konsultor">Ahnadi Pramono</string>
+    <string name="usaha_konsultor">Pemilik HakukuShop</string>
+    <string name="keahlian_konsultor">Ahli Peternakan</string>
+    <string name="hubungi">Hubungi</string>
+    <string name="profile_consultor">Profile Consultor</string>
+    <string name="konsultasi_subtitle">Konsultasikan Usahamu Yuk!</string>
+    <string name="konsultasi_desc">Beberapa mentor berpengalaman kami akan membantu untuk akselerasikan usahamu</string>
 
 
 </resources>

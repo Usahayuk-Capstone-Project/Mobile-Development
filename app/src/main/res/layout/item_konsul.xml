@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_consultor"
     android:layout_width="match_parent"
     android:layout_height="160dp"
     android:layout_marginStart="1dp"
@@ -13,7 +14,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="match_parent">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_avatar"
@@ -24,6 +25,7 @@
             android:src="@drawable/sample_avatar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/profile_consultor"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -32,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:fontFamily="@font/poppinsbold"
-            android:text="Ahnadi Pramono"
+            android:text="@string/nama_konsultor"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/img_avatar"
             tools:ignore="MissingConstraints"
@@ -44,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:fontFamily="@font/poppinsmedium"
-            android:text="Pemilik HakukuShop"
+            android:text="@string/usaha_konsultor"
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/img_avatar"
             app:layout_constraintTop_toBottomOf="@+id/name_konsul" />
@@ -55,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:fontFamily="@font/poppinsregular"
-            android:text="Ahli Peternakan"
+            android:text="@string/keahlian_konsultor"
             android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/img_avatar"
             app:layout_constraintTop_toBottomOf="@+id/bisnis_konsul" />
@@ -67,7 +69,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="18dp"
             android:fontFamily="@font/poppinsmedium"
-            android:text="Hubungi"
+            android:text="@string/hubungi"
             android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -13,18 +13,12 @@ import android.view.WindowManager
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import com.example.usahayuk.data.local.datastore.LoginPreferences
 import com.example.usahayuk.databinding.ActivityWelcomeBinding
 import com.example.usahayuk.ui.MainActivity
 import com.example.usahayuk.ui.MainViewModel
 import com.example.usahayuk.ui.login.LoginActivity
-import com.example.usahayuk.ui.login.LoginViewModel
-import kotlinx.coroutines.Dispatchers.Main
-import kotlinx.coroutines.launch
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
