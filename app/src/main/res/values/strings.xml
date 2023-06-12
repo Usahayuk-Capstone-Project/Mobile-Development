@@ -151,6 +151,10 @@
     <string name="profile_consultor">Profile Consultor</string>
     <string name="konsultasi_subtitle">Konsultasikan Usahamu Yuk!</string>
     <string name="konsultasi_desc">Beberapa mentor berpengalaman kami akan membantu untuk akselerasikan usahamu</string>
+    <string name="temukan_saran_di_komunitas">Temukan Saran di komunitas</string>
+    <string name="hasil_rekomendasi">Hasil Rekomendasi</string>
+    <string name="mulai_usaha_yuk">Mulai Usaha Yuk</string>
+    <string name="hasil_rekomendasi_desc">Berikut beberapa contoh ide usaha bisnis yang cocok dengan anda</string>
 
 
 </resources>
