@@ -142,8 +142,7 @@ class FormActivity : AppCompatActivity() {
     }
 
     private fun recommendationResult() {
-        val dataRequest = RecommendationRequest(EXTRA_UID)
-        val client = ApiConfig.getApiServiceMainFeature().recommendationResult(dataRequest)
+        val client = ApiConfig.getApiServiceMainFeature().recommendationResult(EXTRA_UID)
         client.enqueue(object : Callback<RecommendationResultResponse> {
             override fun onResponse(
                 call: Call<RecommendationResultResponse>,
@@ -157,12 +156,14 @@ class FormActivity : AppCompatActivity() {
                     Log.e(ContentValues.TAG, "onFailure: ${response.message()}")
                     // Print the response body to the log
                     Log.e(ContentValues.TAG, "Response Body: ${response.body().toString()}")
+                    showSuccessDialog()
                 }
             }
             @RequiresApi(Build.VERSION_CODES.R)
             override fun onFailure(call: Call<RecommendationResultResponse>, t: Throwable) {
                 isloading(false)
                 Log.e(ControlsProviderService.TAG, "Failure: ${t.message}")
+                showSuccessDialog()
             }
         })
     }
@@ -202,7 +203,11 @@ class FormActivity : AppCompatActivity() {
                 if (response.isSuccessful && responseBody != null) {
                     if (responseBody.code != 200) {
                         isloading(true)
-                        showSuccessDialog()
+                        Toast.makeText(
+                            this@FormActivity,
+                            "Data Berhasil Dikirim",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     } else {
                         isloading(false)
                         Toast.makeText(

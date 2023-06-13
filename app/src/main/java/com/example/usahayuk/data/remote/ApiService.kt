@@ -37,6 +37,6 @@ interface ApiService {
 
     @POST("recommendation/")
     fun recommendationResult(
-        @Body request: RecommendationRequest
+        @Header("id") id: String,
     ): Call<RecommendationResultResponse>
 }
