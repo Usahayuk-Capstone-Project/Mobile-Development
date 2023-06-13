@@ -1,8 +1,6 @@
 package com.example.usahayuk.data.model
 
 import com.google.gson.annotations.SerializedName
-import retrofit2.http.Field
-import retrofit2.http.Header
 
 data class LoginRequest (
     @SerializedName("alamat_email") val email: String,
@@ -22,15 +20,19 @@ data class UpdateRequest(
 )
 
 data class PostDataRequest(
-    @SerializedName("skala_usaha") val skalaUsaha: String,
-    @SerializedName("modal_usaha") val modalUsaha: String,
-    @SerializedName("jenis_usaha") val jenisUsaha: String,
-    @SerializedName("jenis_lokasi") val jenisLokasi: List<String>,
-    @SerializedName("gender_targetpelanggan") val genderTargetpelanggan: List<String>,
     @SerializedName("bidang_usaha") val bidangUsaha: String,
-    @SerializedName("status_targetpelanggan") val statusTargetpelanggan: List<String>,
+    @SerializedName("gender_targetpelanggan") val genderTargetpelanggan: List<String>,
+    @SerializedName("jenis_lokasi_") val jenisLokasi: List<String>,
+    @SerializedName("modal_usaha") val modalUsaha: String,
     @SerializedName("omset_usaha") val omsetUsaha: String,
+    @SerializedName("skala_usaha") val skalaUsaha: String,
+    @SerializedName("pekerjaan_targetpelanggan") val pekerjaanTargetPelanggan: List<String>,
+    @SerializedName("status_targetpelanggan") val statusTargetpelanggan: List<String>,
     @SerializedName("usia_targetpelanggan") val usiaTargetpelanggan: List<String>,
-    @SerializedName("perkerjaan_targetpelanggan") val perkerjaanTargetpelanggan: List<String>
 )
+data class RecommendationRequest(
+    @SerializedName("user_id") val user_id :String
+)
+
+
 

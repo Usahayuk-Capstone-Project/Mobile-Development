@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 import com.example.usahayuk.BuildConfig
 
-private const val MAIN_FEATURE_URL ="https://my-ml-image-vng2lopkba-et.a.run.app/recommendation/"
+private const val MAIN_FEATURE_URL ="https://my-ml-image-vng2lopkba-et.a.run.app/"
 class ApiConfig {
     companion object {
         fun getApiService(): ApiService {

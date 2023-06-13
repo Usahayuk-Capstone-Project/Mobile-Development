@@ -30,12 +30,13 @@ interface ApiService {
         @Body request: PostDataRequest
     ): Call<RecomenderResponse>
 
+    @GET("api/recommender/{id}")
+    fun getRecommender(
+        @Path("id") id: String
+    ): Call<GetRecommenderResponse>
 
-
-
-
-
-
-
-
+    @POST("recommendation/")
+    fun recommendationResult(
+        @Body request: RecommendationRequest
+    ): Call<RecommendationResultResponse>
 }

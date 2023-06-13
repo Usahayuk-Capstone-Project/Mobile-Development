@@ -587,6 +587,7 @@
             android:text="@string/perkantoran"
             app:layout_constraintTop_toBottomOf="@id/cb_areaibadah"
             tools:ignore="MissingConstraints" />
+
         <CheckBox
             android:id="@+id/cb_areaindustri"
             android:layout_width="wrap_content"
@@ -610,9 +611,9 @@
             android:fontFamily="@font/poppinsmedium"
             android:text="@string/cari_rekomendasi"
             android:textAllCaps="false"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cb_terminal"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cb_terminal" />
 
 
         <ProgressBar

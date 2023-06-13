@@ -26,7 +26,6 @@ private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(na
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var mainViewModel: MainViewModel
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -43,10 +42,8 @@ class MainActivity : AppCompatActivity() {
                 else -> {
                 }
             }
-
             true
         }
-
         if (showHomeFragment) {
             replaceFragment(HomeFragment())
         }
@@ -87,6 +84,4 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.replace(R.id.frame_layout, fragment)
         fragmentTransaction.commit()
     }
-    
-
 }

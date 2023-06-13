@@ -1,6 +1,8 @@
 package com.example.usahayuk.ui.home
 
 import android.content.ContentValues
+import android.content.DialogInterface
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.service.controls.ControlsProviderService
@@ -10,11 +12,13 @@ import android.widget.CheckBox
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.usahayuk.R
 import com.example.usahayuk.Utils
-import com.example.usahayuk.data.model.PostDataRequest
-import com.example.usahayuk.data.model.RecomenderResponse
+import com.example.usahayuk.Utils.EXTRA_UID
+import com.example.usahayuk.Utils.token
+import com.example.usahayuk.data.model.*
 import com.example.usahayuk.data.remote.ApiConfig
 import com.example.usahayuk.databinding.ActivityFormBinding
 import retrofit2.Call
@@ -25,11 +29,12 @@ class FormActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFormBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityFormBinding.inflate(layoutInflater)
+
         setContentView(binding.root)
 
         supportActionBar?.hide()
-
         setupAction()
     }
 
@@ -116,51 +121,76 @@ class FormActivity : AppCompatActivity() {
                 }
                 else -> {
                     postData(
-                        Utils.token,
-                        Utils.EXTRA_UID,
-                        skalaUsaha,
-                        modalUsaha,
                         bidangUsaha,
+                        listGender,
+                        listLokasi,
+                        modalUsaha,
                         omsetUsaha,
-                        listUsiaTarget,
+                        skalaUsaha,
                         listTargetPekerjaan,
                         listKelasSosial,
-                        listLokasi,
-                        listGender,
+                        listUsiaTarget,
+                        token,
+                        EXTRA_UID
                     )
                     isloading(true)
                     Toast.makeText(this, "Data Sedang Dikirim", Toast.LENGTH_SHORT).show()
+                    recommendationResult()
                 }
             }
         }
+    }
 
+    private fun recommendationResult() {
+        val dataRequest = RecommendationRequest(EXTRA_UID)
+        val client = ApiConfig.getApiServiceMainFeature().recommendationResult(dataRequest)
+        client.enqueue(object : Callback<RecommendationResultResponse> {
+            override fun onResponse(
+                call: Call<RecommendationResultResponse>,
+                response: Response<RecommendationResultResponse>
+            ) {
+                val responseBody = response.body()
+                if (response.isSuccessful && responseBody != null) {
+                    isloading(false)
+                } else {
+                    isloading(false)
+                    Log.e(ContentValues.TAG, "onFailure: ${response.message()}")
+                    // Print the response body to the log
+                    Log.e(ContentValues.TAG, "Response Body: ${response.body().toString()}")
+                }
+            }
+            @RequiresApi(Build.VERSION_CODES.R)
+            override fun onFailure(call: Call<RecommendationResultResponse>, t: Throwable) {
+                isloading(false)
+                Log.e(ControlsProviderService.TAG, "Failure: ${t.message}")
+            }
+        })
     }
 
     private fun postData(
-        token: String,
-        uid: String,
-        skalaUsaha: String,
-        modalUsaha: String,
         bidangUsaha: String,
+        listGender: List<String>,
+        listLokasi: List<String>,
+        modalUsaha: String,
         omsetUsaha: String,
-        listUsiaTarget: List<String>,
+        skalaUsaha: String,
         listTargetPekerjaan: List<String>,
         listKelasSosial: List<String>,
-        listLokasi: List<String>,
-        listGender: List<String>
+        listUsiaTarget: List<String>,
+        token: String,
+        uid: String
     ) {
         isloading(true)
         val dataRequest = PostDataRequest(
-            skalaUsaha,
-            modalUsaha,
             bidangUsaha,
-            listLokasi,
             listGender,
-            bidangUsaha,
-            listKelasSosial,
+            listLokasi,
+            modalUsaha,
             omsetUsaha,
+            skalaUsaha,
+            listTargetPekerjaan,
+            listKelasSosial,
             listUsiaTarget,
-            listTargetPekerjaan
         )
         val client = ApiConfig.getApiService().postData(token, uid, dataRequest)
         client.enqueue(object : Callback<RecomenderResponse> {
@@ -172,11 +202,7 @@ class FormActivity : AppCompatActivity() {
                 if (response.isSuccessful && responseBody != null) {
                     if (responseBody.code != 200) {
                         isloading(true)
-                        Toast.makeText(
-                            this@FormActivity,
-                            "Data Berhasil Dikirim",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        showSuccessDialog()
                     } else {
                         isloading(false)
                         Toast.makeText(
@@ -190,13 +216,30 @@ class FormActivity : AppCompatActivity() {
                     Log.e(ContentValues.TAG, "onFailure: ${response.message()}")
                 }
             }
-
             @RequiresApi(Build.VERSION_CODES.R)
             override fun onFailure(call: Call<RecomenderResponse>, t: Throwable) {
                 Log.e(ControlsProviderService.TAG, "Failure: ${t.message}")
             }
-
         })
+    }
+
+    private fun showSuccessDialog() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Success")
+        builder.setMessage("Data Berhasil Dikirim, Menuju ke hasil rekomendasi")
+        builder.setPositiveButton("OK") { dialog: DialogInterface, _: Int ->
+            dialog.dismiss()
+            openRecommendationActivity()
+        }
+        builder.setCancelable(false)
+
+        val dialog = builder.create()
+        dialog.show()
+    }
+
+    private fun openRecommendationActivity() {
+        val intent = Intent(this, RecommendationActivity::class.java)
+        startActivity(intent)
     }
 
     private fun isloading(it: Boolean) {
@@ -229,7 +272,6 @@ class FormActivity : AppCompatActivity() {
             else -> null
         }
     }
-
 
     private fun bidangUsaha(): String? {
         val radioGroup: RadioGroup = binding.rgBidangusaha
@@ -324,11 +366,9 @@ class FormActivity : AppCompatActivity() {
         if (binding.cbLakiLaki.isChecked) {
             targetGender.add(getString(R.string.laki_laki))
         }
-
         if (binding.cbPerempuan.isChecked) {
             targetGender.add(getString(R.string.perempuan))
         }
-
         return targetGender.joinToString(", ")
     }
 
@@ -370,35 +410,30 @@ class FormActivity : AppCompatActivity() {
             }
             pekerjaanTarget.append(cbWiraswasta.text.toString())
         }
-
         if (cbPetani.isChecked) {
             if (pekerjaanTarget.isNotEmpty()) {
                 pekerjaanTarget.append(", ")
             }
             pekerjaanTarget.append(cbPetani.text.toString())
         }
-
         if (cbNelayan.isChecked) {
             if (pekerjaanTarget.isNotEmpty()) {
                 pekerjaanTarget.append(", ")
             }
             pekerjaanTarget.append(cbNelayan.text.toString())
         }
-
         if (cbPensiunan.isChecked) {
             if (pekerjaanTarget.isNotEmpty()) {
                 pekerjaanTarget.append(", ")
             }
             pekerjaanTarget.append(cbPensiunan.text.toString())
         }
-
         if (cbTidakBekerja.isChecked) {
             if (pekerjaanTarget.isNotEmpty()) {
                 pekerjaanTarget.append(", ")
             }
             pekerjaanTarget.append(cbTidakBekerja.text.toString())
         }
-
         if (cbPekerjaInformal.isChecked) {
             if (pekerjaanTarget.isNotEmpty()) {
                 pekerjaanTarget.append(", ")
@@ -456,7 +491,6 @@ class FormActivity : AppCompatActivity() {
             }
             kelasSosial.append(cbKelasMiskin.text.toString())
         }
-
         return kelasSosial
     }
 
@@ -535,29 +569,24 @@ class FormActivity : AppCompatActivity() {
             }
             lokasi.append(cbAreaIbadah.text.toString())
         }
-
         if (cbPerkantoran.isChecked) {
             if (lokasi.isNotEmpty()) {
                 lokasi.append(", ")
             }
             lokasi.append(cbPerkantoran.text.toString())
         }
-
         if (cbAreaIndustri.isChecked) {
             if (lokasi.isNotEmpty()) {
                 lokasi.append(", ")
             }
             lokasi.append(cbAreaIndustri.text.toString())
         }
-
         if (cbTerminal.isChecked) {
             if (lokasi.isNotEmpty()) {
                 lokasi.append(", ")
             }
             lokasi.append(cbTerminal.text.toString())
         }
-
         return lokasi
     }
-
 }

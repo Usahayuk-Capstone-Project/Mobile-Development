@@ -1,6 +1,7 @@
 package com.example.usahayuk.data.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class RecomenderResponse(
 
@@ -10,6 +11,13 @@ data class RecomenderResponse(
 	@field:SerializedName("user")
 	val user: UserData
 )
+
+data class RecommendationResultResponse(
+
+	@SerializedName("Hasil_rekomendasi")
+	val hasilRekomendasi: List<GetRecommenderResponse>
+
+) : Serializable
 
 data class UserData(
 

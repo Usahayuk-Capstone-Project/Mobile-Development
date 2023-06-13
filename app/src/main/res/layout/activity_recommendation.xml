@@ -62,7 +62,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rekomendasi_subtitle" />
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_story"
+        android:id="@+id/rv_recommendation"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginHorizontal="24dp"
@@ -74,5 +74,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rekomendasi_desc"
-        tools:listitem="@layout/item_konsul"/>
+        tools:listitem="@layout/item_recom"/>
+
+    <com.example.usahayuk.customview.CustomButtonIcon
+        android:id="@+id/btnBackToForm"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="52dp"
+        android:text="@string/isi_data_ulang"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_recommendation"
+        app:layout_constraintVertical_bias="0.458" />
+
+    <com.example.usahayuk.customview.CustomButtonIcon
+        android:id="@+id/btnBackToHome"
+        android:layout_width="150dp"
+        android:layout_height="34dp"
+        android:text="@string/kembali_beranda"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.336"
+        app:layout_constraintStart_toEndOf="@+id/btnBackToForm" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
