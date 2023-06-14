@@ -4,616 +4,766 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp"
     android:background="@color/green_surface"
     tools:context=".ui.home.FormActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp">
+
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/title_form"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/isi_data_usaha"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/poppinsbold"
+            android:textColor="@color/black"
+            android:text="@string/isi_data_usaha"
             android:textSize="20sp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/subtitle_form"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/title_desc"
             android:fontFamily="@font/poppinsbold"
+            android:textColor="@color/black"
             android:textSize="16sp"
             android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8"/>
+            app:layout_constraintTop_toBottomOf="@+id/title_form"/>
 
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_skalausaha"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/skala_usaha"
-            android:fontFamily="@font/poppinsmedium"
-            android:textSize="16sp"
             android:layout_marginTop="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textView9"
-            />
-        <RadioGroup
-            android:id="@+id/rg_skalausaha"
-            android:layout_width="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/subtitle_form">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="24dp">
+                <TextView
+                    android:id="@+id/tv_skalausaha"
+                    android:layout_marginTop="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textColor="@color/black"
+                    android:text="@string/skala_usaha"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+                <RadioGroup
+                    android:id="@+id/rg_skalausaha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="12dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_skalausaha">
+
+                    <RadioButton
+                        android:id="@+id/rb_mikro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mikro"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_kecil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/kecil"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_menengah"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/menengah"
+                        android:textSize="14sp" />
+                </RadioGroup>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_modalusaha"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textView10">
-
-            <RadioButton
-                android:id="@+id/rb_mikro"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/mikro"/>
-
-            <RadioButton
-                android:id="@+id/rb_kecil"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/kecil"/>
-
-            <RadioButton
-                android:id="@+id/rb_menengah"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/menengah"/>
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/modal_usaha"
-            android:fontFamily="@font/poppinsmedium"
-            android:textSize="16sp"
             android:layout_marginTop="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rg_skalausaha"
-            />
+            app:layout_constraintTop_toBottomOf="@id/card_skalausaha"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="24dp">
+                <TextView
+                    android:id="@+id/tv_modalusaha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@string/modal_usaha"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints" />
 
-        <RadioGroup
-            android:id="@+id/rg_modalusaha"
-            android:layout_width="wrap_content"
+                <RadioGroup
+                    android:id="@+id/rg_modalusaha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_modalusaha">
+
+                    <RadioButton
+                        android:id="@+id/rb_3_juta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/_3_juta"/>
+                    <RadioButton
+                        android:id="@+id/rb_3_5_juta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/_3_5_juta"/>
+                    <RadioButton
+                        android:id="@+id/rb_5_10_juta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/_5_10_juta"/>
+                    <RadioButton
+                        android:id="@+id/rb_10_30_juta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/_10_30_juta"/>
+                    <RadioButton
+                        android:id="@+id/rb_30_50_juta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/_30_50_juta"/>
+                    <RadioButton
+                        android:id="@+id/rb_50_500_juta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/_50_500_juta"/>
+                    <RadioButton
+                        android:id="@+id/rb_1_miliar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/_1_miliar"/>
+                </RadioGroup>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_bidangusaha"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textView11">
-
-            <RadioButton
-                android:id="@+id/rb_3_juta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/_3_juta"/>
-            <RadioButton
-                android:id="@+id/rb_3_5_juta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/_3_5_juta"/>
-            <RadioButton
-                android:id="@+id/rb_5_10_juta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/_5_10_juta"/>
-            <RadioButton
-                android:id="@+id/rb_10_30_juta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/_10_30_juta"/>
-            <RadioButton
-                android:id="@+id/rb_30_50_juta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/_30_50_juta"/>
-            <RadioButton
-                android:id="@+id/rb_50_500_juta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/_50_500_juta"/>
-            <RadioButton
-                android:id="@+id/rb_1_miliar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/_1_miliar"/>
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/bidang_usaha"
-            android:fontFamily="@font/poppinsmedium"
-            android:textSize="16sp"
             android:layout_marginTop="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rg_modalusaha"
-            />
+            app:layout_constraintTop_toBottomOf="@id/card_modalusaha"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="24dp">
+                <TextView
+                    android:id="@+id/tv_bidangusaha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@string/bidang_usaha"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints" />
 
-        <RadioGroup
-            android:id="@+id/rg_bidangusaha"
-            android:layout_width="wrap_content"
+                <RadioGroup
+                    android:id="@+id/rg_bidangusaha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_bidangusaha">
+
+                    <RadioButton
+                        android:id="@+id/rb_pertanian_perkebunan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/pertanian_dan_perkebunan"/>
+                    <RadioButton
+                        android:id="@+id/rb_perikanan_kelautan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/perikanan_dan_kelautan"/>
+                    <RadioButton
+                        android:id="@+id/rb_industri_makanan_minuman"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/industri_makanan_dan_minuman"/>
+                    <RadioButton
+                        android:id="@+id/rb_industri_fashion_tekstil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/industri_fashion_dan_tekstil"/>
+                    <RadioButton
+                        android:id="@+id/rb_industri_kerajinan_souvenir"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/industri_kerajinan_tangan_dan_souvenir"/>
+                    <RadioButton
+                        android:id="@+id/rb_pendidikan_pelatihan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/pendidikan_dan_pelatihan"/>
+                    <RadioButton
+                        android:id="@+id/rb_jasa_kesehatan_kecantikan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/jasa_kesehatan_dan_kecantikan"/>
+                    <RadioButton
+                        android:id="@+id/rb_jasa_keuangan_perbankan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/jasa_keuangan_dan_perbankan"/>
+                    <RadioButton
+                        android:id="@+id/rb_jasa_konsultasi_manajemen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/jasa_konsultasi_dan_manajemen"/>
+                    <RadioButton
+                        android:id="@+id/rb_jasa_teknologi_informasi_komunikasi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/jasa_teknologi_informasi_dan_komunikasi"/>
+                    <RadioButton
+                        android:id="@+id/rb_jasa_kebersihan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/jasa_kebersihan"/>
+                    <RadioButton
+                        android:id="@+id/rb_jasa_keamanan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/jasa_keamanan"/>
+                    <RadioButton
+                        android:id="@+id/rb_otomotif"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/otomotif"/>
+                </RadioGroup>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_omsetusaha"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textView12">
-
-            <RadioButton
-                android:id="@+id/rb_pertanian_perkebunan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/pertanian_dan_perkebunan"/>
-            <RadioButton
-                android:id="@+id/rb_perikanan_kelautan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/perikanan_dan_kelautan"/>
-            <RadioButton
-                android:id="@+id/rb_industri_makanan_minuman"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/industri_makanan_dan_minuman"/>
-            <RadioButton
-                android:id="@+id/rb_industri_fashion_tekstil"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/industri_fashion_dan_tekstil"/>
-            <RadioButton
-                android:id="@+id/rb_industri_kerajinan_souvenir"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/industri_kerajinan_tangan_dan_souvenir"/>
-            <RadioButton
-                android:id="@+id/rb_pendidikan_pelatihan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/pendidikan_dan_pelatihan"/>
-            <RadioButton
-                android:id="@+id/rb_jasa_kesehatan_kecantikan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/jasa_kesehatan_dan_kecantikan"/>
-            <RadioButton
-                android:id="@+id/rb_jasa_keuangan_perbankan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/jasa_keuangan_dan_perbankan"/>
-            <RadioButton
-                android:id="@+id/rb_jasa_konsultasi_manajemen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/jasa_konsultasi_dan_manajemen"/>
-            <RadioButton
-                android:id="@+id/rb_jasa_teknologi_informasi_komunikasi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/jasa_teknologi_informasi_dan_komunikasi"/>
-            <RadioButton
-                android:id="@+id/rb_jasa_kebersihan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/jasa_kebersihan"/>
-            <RadioButton
-                android:id="@+id/rb_jasa_keamanan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/jasa_keamanan"/>
-            <RadioButton
-                android:id="@+id/rb_otomotif"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/otomotif"/>
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/omset_usaha"
-            android:fontFamily="@font/poppinsmedium"
-            android:textSize="16sp"
             android:layout_marginTop="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rg_bidangusaha"
-            />
+            app:layout_constraintTop_toBottomOf="@id/card_bidangusaha"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="24dp">
+                <TextView
+                    android:id="@+id/tv_omsetusaha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@string/omset_usaha"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints" />
 
-        <RadioGroup
-            android:id="@+id/rg_omsetusaha"
-            android:layout_width="wrap_content"
+                <RadioGroup
+                    android:id="@+id/rg_omsetusaha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_omsetusaha">
+
+                    <RadioButton
+                        android:id="@+id/rb_0_10_juta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/_0_10_juta"/>
+                    <RadioButton
+                        android:id="@+id/rb_11_20_juta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/_11_20_juta"/>
+                    <RadioButton
+                        android:id="@+id/rb_21_30_juta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/_21_30_juta"/>
+                    <RadioButton
+                        android:id="@+id/rb_31_40_juta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/_31_40_juta"/>
+                    <RadioButton
+                        android:id="@+id/rb_41_50_juta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/_41_50_juta"/>
+                    <RadioButton
+                        android:id="@+id/rb_50_juta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/_50_juta"/>
+                </RadioGroup>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_usiatarget"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textView13">
-
-            <RadioButton
-                android:id="@+id/rb_0_10_juta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/_0_10_juta"/>
-            <RadioButton
-                android:id="@+id/rb_11_20_juta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/_11_20_juta"/>
-            <RadioButton
-                android:id="@+id/rb_21_30_juta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/_21_30_juta"/>
-            <RadioButton
-                android:id="@+id/rb_31_40_juta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/_31_40_juta"/>
-            <RadioButton
-                android:id="@+id/rb_41_50_juta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/_41_50_juta"/>
-            <RadioButton
-                android:id="@+id/rb_50_juta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/_50_juta"/>
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/usia_target"
-            android:fontFamily="@font/poppinsmedium"
-            android:textSize="16sp"
             android:layout_marginTop="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rg_omsetusaha"
-            />
+            app:layout_constraintTop_toBottomOf="@id/card_omsetusaha"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="24dp">
+                <TextView
+                    android:id="@+id/tv_usiatarget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@string/usia_target"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="16sp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints" />
 
-        <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_0_23_bulan"
-            app:layout_constraintTop_toBottomOf="@id/textView14"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/checkBox2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_2_11_tahun"
-            app:layout_constraintTop_toBottomOf="@id/checkBox"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/checkBox3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_12_17_tahun"
-            app:layout_constraintTop_toBottomOf="@id/checkBox2"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/checkBox4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_18_39_tahun"
-            app:layout_constraintTop_toBottomOf="@id/checkBox3"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/checkBox5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_40_59_tahun"
-            app:layout_constraintTop_toBottomOf="@id/checkBox4"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/checkBox6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_60_tahun"
-            app:layout_constraintTop_toBottomOf="@id/checkBox5"
-            tools:ignore="MissingConstraints" />
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/gender_target"
-            android:fontFamily="@font/poppinsmedium"
-            android:textSize="16sp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/checkBox6"
-            />
-        <CheckBox
-            android:id="@+id/cb_laki_laki"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/laki_laki"
-            app:layout_constraintTop_toBottomOf="@id/textView15"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/cb_perempuan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/perempuan"
-            app:layout_constraintTop_toBottomOf="@id/cb_laki_laki"
-            tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/checkBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_0_23_bulan"
+                    app:layout_constraintTop_toBottomOf="@id/tv_usiatarget"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/checkBox2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_2_11_tahun"
+                    app:layout_constraintTop_toBottomOf="@id/checkBox"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/checkBox3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_12_17_tahun"
+                    app:layout_constraintTop_toBottomOf="@id/checkBox2"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/checkBox4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_18_39_tahun"
+                    app:layout_constraintTop_toBottomOf="@id/checkBox3"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/checkBox5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_40_59_tahun"
+                    app:layout_constraintTop_toBottomOf="@id/checkBox4"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/checkBox6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_60_tahun"
+                    app:layout_constraintTop_toBottomOf="@id/checkBox5"
+                    tools:ignore="MissingConstraints" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/textView16"
-            android:layout_width="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_gendertarget"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/pekerjaan_target"
-            android:fontFamily="@font/poppinsmedium"
-            android:textSize="16sp"
             android:layout_marginTop="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cb_perempuan"
-            />
-        <CheckBox
-            android:id="@+id/cb_pengangguran"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/pengangguran"
-            app:layout_constraintTop_toBottomOf="@id/textView16"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/cb_pelajar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/pelajar_mahasiswa"
-            app:layout_constraintTop_toBottomOf="@id/cb_pengangguran"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/cb_pegawai"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/pegawai_negeri_sipil"
-            app:layout_constraintTop_toBottomOf="@id/cb_pelajar"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/cb_wiraswasta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/wiraswasta"
-            app:layout_constraintTop_toBottomOf="@id/cb_pegawai"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/cb_petani"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/petani"
-            app:layout_constraintTop_toBottomOf="@id/cb_wiraswasta"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/cb_nelayan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/nelayan"
-            app:layout_constraintTop_toBottomOf="@id/cb_petani"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/cb_pensiunan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/pensiunan"
-            app:layout_constraintTop_toBottomOf="@id/cb_nelayan"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/cb_tdk_bekerja"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tidak_bekerja_tapi_menerima_penghasilan_pasif"
-            app:layout_constraintTop_toBottomOf="@id/cb_pensiunan"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/cb_pekerja_informal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/pekerja_informal"
-            app:layout_constraintTop_toBottomOf="@id/cb_tdk_bekerja"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/cb_irt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/irt"
-            app:layout_constraintTop_toBottomOf="@id/cb_pekerja_informal"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintTop_toBottomOf="@id/card_usiatarget"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="24dp">
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@string/gender_target"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/cb_laki_laki"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/laki_laki"
+                    app:layout_constraintTop_toBottomOf="@id/textView15"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/cb_perempuan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/perempuan"
+                    app:layout_constraintTop_toBottomOf="@id/cb_laki_laki"
+                    tools:ignore="MissingConstraints" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/textView17"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/status_target"
-            android:fontFamily="@font/poppinsmedium"
-            android:textSize="16sp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cb_irt"
-            />
-        <CheckBox
-            android:id="@+id/cb_kelas_atas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/kelas_atas"
-            app:layout_constraintTop_toBottomOf="@id/textView17"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/cb_kelas_menengah"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/kelas_menengah"
-            app:layout_constraintTop_toBottomOf="@id/cb_kelas_atas"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/cb_kelas_menujumenengah"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/menuju_kelas_menengah"
-            app:layout_constraintTop_toBottomOf="@id/cb_kelas_menengah"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/cb_kelas_rentan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/kelas_rentan"
-            app:layout_constraintTop_toBottomOf="@id/cb_kelas_menujumenengah"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/cb_kelas_miskin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/kelas_miskin"
-            app:layout_constraintTop_toBottomOf="@id/cb_kelas_rentan"
-            tools:ignore="MissingConstraints" />
-        <TextView
-            android:id="@+id/textView18"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/jenis_lokasi"
-            android:fontFamily="@font/poppinsmedium"
-            android:textSize="16sp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cb_kelas_miskin"
-            />
-        <CheckBox
-            android:id="@+id/cb_pegunungan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/pegunungan"
-            app:layout_constraintTop_toBottomOf="@id/textView18"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/cb_pusatkota"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/pusat_kota_dan_keramaian"
-            app:layout_constraintTop_toBottomOf="@id/cb_pegunungan"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/cb_desaalam"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/desa_dan_alam"
-            app:layout_constraintTop_toBottomOf="@id/cb_pusatkota"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/cb_lingkunganpendidikan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/lingkungan_pendidikan"
-            app:layout_constraintTop_toBottomOf="@id/cb_desaalam"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/cb_pelabuhan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/pelabuhan_dan_laut"
-            app:layout_constraintTop_toBottomOf="@id/cb_lingkunganpendidikan"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/cb_areawisata"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/area_wisata"
-            app:layout_constraintTop_toBottomOf="@id/cb_pelabuhan"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/cb_pemukiman"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/pemukiman_penduduk"
-            app:layout_constraintTop_toBottomOf="@id/cb_areawisata"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/cb_pusatbelanja"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/pusat_perbelanjaan"
-            app:layout_constraintTop_toBottomOf="@id/cb_pemukiman"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/cb_areaibadah"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/area_peribadahan"
-            app:layout_constraintTop_toBottomOf="@id/cb_pusatbelanja"
-            tools:ignore="MissingConstraints" />
-        <CheckBox
-            android:id="@+id/cb_perkantoran"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/perkantoran"
-            app:layout_constraintTop_toBottomOf="@id/cb_areaibadah"
-            tools:ignore="MissingConstraints" />
 
-        <CheckBox
-            android:id="@+id/cb_areaindustri"
-            android:layout_width="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_pekerjaantarget"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/kawasan_industri"
-            app:layout_constraintTop_toBottomOf="@id/cb_perkantoran"
-            tools:ignore="MissingConstraints,TooManyViews" />
-        <CheckBox
-            android:id="@+id/cb_terminal"
-            android:layout_width="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/card_gendertarget"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="24dp">
+                <TextView
+                    android:id="@+id/tv_pekerjaantarget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@string/pekerjaan_target"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="16sp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/cb_pengangguran"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pengangguran"
+                    app:layout_constraintTop_toBottomOf="@id/tv_pekerjaantarget"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/cb_pelajar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pelajar_mahasiswa"
+                    app:layout_constraintTop_toBottomOf="@id/cb_pengangguran"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/cb_pegawai"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pegawai_negeri_sipil"
+                    app:layout_constraintTop_toBottomOf="@id/cb_pelajar"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/cb_wiraswasta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/wiraswasta"
+                    app:layout_constraintTop_toBottomOf="@id/cb_pegawai"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/cb_petani"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/petani"
+                    app:layout_constraintTop_toBottomOf="@id/cb_wiraswasta"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/cb_nelayan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nelayan"
+                    app:layout_constraintTop_toBottomOf="@id/cb_petani"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/cb_pensiunan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pensiunan"
+                    app:layout_constraintTop_toBottomOf="@id/cb_nelayan"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/cb_tdk_bekerja"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tidak_bekerja_tapi_menerima_penghasilan_pasif"
+                    app:layout_constraintTop_toBottomOf="@id/cb_pensiunan"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/cb_pekerja_informal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pekerja_informal"
+                    app:layout_constraintTop_toBottomOf="@id/cb_tdk_bekerja"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/cb_irt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/irt"
+                    app:layout_constraintTop_toBottomOf="@id/cb_pekerja_informal"
+                    tools:ignore="MissingConstraints" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_statustarget"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/terminal_transportasi_umum"
-            app:layout_constraintTop_toBottomOf="@id/cb_areaindustri"
-            tools:ignore="MissingConstraints" />
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/card_pekerjaantarget"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="24dp">
+                <TextView
+                    android:id="@+id/tv_statustarget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@string/status_target"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/cb_kelas_atas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kelas_atas"
+                    app:layout_constraintTop_toBottomOf="@id/tv_statustarget"
+                    tools:ignore="MissingConstraints,TooManyViews" />
+                <CheckBox
+                    android:id="@+id/cb_kelas_menengah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kelas_menengah"
+                    app:layout_constraintTop_toBottomOf="@id/cb_kelas_atas"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/cb_kelas_menujumenengah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/menuju_kelas_menengah"
+                    app:layout_constraintTop_toBottomOf="@id/cb_kelas_menengah"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/cb_kelas_rentan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kelas_rentan"
+                    app:layout_constraintTop_toBottomOf="@id/cb_kelas_menujumenengah"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/cb_kelas_miskin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kelas_miskin"
+                    app:layout_constraintTop_toBottomOf="@id/cb_kelas_rentan"
+                    tools:ignore="MissingConstraints" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_jenislokasi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/card_statustarget"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="24dp">
+                <TextView
+                    android:id="@+id/tv_jenislokasi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@string/jenis_lokasi"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="16sp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/cb_pegunungan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pegunungan"
+                    app:layout_constraintTop_toBottomOf="@id/tv_jenislokasi"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/cb_pusatkota"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pusat_kota_dan_keramaian"
+                    app:layout_constraintTop_toBottomOf="@id/cb_pegunungan"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/cb_desaalam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/desa_dan_alam"
+                    app:layout_constraintTop_toBottomOf="@id/cb_pusatkota"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/cb_lingkunganpendidikan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lingkungan_pendidikan"
+                    app:layout_constraintTop_toBottomOf="@id/cb_desaalam"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/cb_pelabuhan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pelabuhan_dan_laut"
+                    app:layout_constraintTop_toBottomOf="@id/cb_lingkunganpendidikan"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/cb_areawisata"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/area_wisata"
+                    app:layout_constraintTop_toBottomOf="@id/cb_pelabuhan"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/cb_pemukiman"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pemukiman_penduduk"
+                    app:layout_constraintTop_toBottomOf="@id/cb_areawisata"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/cb_pusatbelanja"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pusat_perbelanjaan"
+                    app:layout_constraintTop_toBottomOf="@id/cb_pemukiman"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/cb_areaibadah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/area_peribadahan"
+                    app:layout_constraintTop_toBottomOf="@id/cb_pusatbelanja"
+                    tools:ignore="MissingConstraints" />
+                <CheckBox
+                    android:id="@+id/cb_perkantoran"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/perkantoran"
+                    app:layout_constraintTop_toBottomOf="@id/cb_areaibadah"
+                    tools:ignore="MissingConstraints" />
+
+                <CheckBox
+                    android:id="@+id/cb_areaindustri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kawasan_industri"
+                    app:layout_constraintTop_toBottomOf="@id/cb_perkantoran"
+                    tools:ignore="MissingConstraints,TooManyViews" />
+                <CheckBox
+                    android:id="@+id/cb_terminal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/terminal_transportasi_umum"
+                    app:layout_constraintTop_toBottomOf="@id/cb_areaindustri"
+                    tools:ignore="MissingConstraints" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
 
         <com.example.usahayuk.customview.CustomButton
             android:id="@+id/cari_rekomendasi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:fontFamily="@font/poppinsmedium"
             android:text="@string/cari_rekomendasi"
             android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cb_terminal" />
+            app:layout_constraintTop_toBottomOf="@id/card_jenislokasi" />
 
 
         <ProgressBar

@@ -67,34 +67,41 @@
         android:layout_height="0dp"
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="12dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="140dp"
         android:clipToPadding="false"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rekomendasi_desc"
+
         tools:listitem="@layout/item_recom"/>
 
     <com.example.usahayuk.customview.CustomButtonIcon
         android:id="@+id/btnBackToForm"
-        android:layout_width="150dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="52dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="24dp"
         android:text="@string/isi_data_ulang"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv_recommendation"
-        app:layout_constraintVertical_bias="0.458" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <com.example.usahayuk.customview.CustomButtonIcon
         android:id="@+id/btnBackToHome"
-        android:layout_width="150dp"
-        android:layout_height="34dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="12dp"
         android:text="@string/kembali_beranda"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.336"
-        app:layout_constraintStart_toEndOf="@+id/btnBackToForm" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBackToForm"
+        app:layout_constraintVertical_bias="0.035" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

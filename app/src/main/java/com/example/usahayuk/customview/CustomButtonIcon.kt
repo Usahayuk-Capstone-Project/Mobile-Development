@@ -30,7 +30,7 @@ class CustomButtonIcon : AppCompatButton {
         super.onDraw(canvas)
 
         setTextColor(textColor)
-        textSize = 12f
+        textSize = 16f
         gravity = Gravity.CENTER
 
         background = if (isEnabled) enableButton else disableButton

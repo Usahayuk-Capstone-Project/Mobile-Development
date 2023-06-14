@@ -12,16 +12,14 @@
         android:padding="24dp"
         android:background="@drawable/bg_profile">
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:id="@+id/img_avatar"
             android:layout_width="60dp"
             android:layout_height="60dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="16dp"
-            tools:src="@drawable/sample_avatar" />
+            tools:src="@drawable/sample_avatar"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/name_profile"
@@ -80,7 +78,7 @@
             android:layout_height="50dp"
             android:background="@drawable/button_outline"
             android:drawablePadding="8dp"
-            android:text="@string/pengaturan_bahasa"
+            android:text="@string/riwayat"
             android:textSize="14sp"
             android:textAlignment="viewStart"
             android:textAllCaps="false"

@@ -12,10 +12,9 @@
         android:id="@+id/imgLogo"
         android:layout_width="231dp"
         android:layout_height="121dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.19"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/logotext" />
 
@@ -25,7 +24,6 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.235"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
@@ -38,7 +36,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="40dp"
         android:alpha="0"
-        android:fontFamily="@font/poppinsmedium"
+        android:fontFamily="@font/poppinsbold"
         android:text="@string/title_welcome_page"
         android:textColor="@color/green_main"
         android:textSize="20sp"
@@ -72,6 +70,7 @@
         android:alpha="0"
         android:backgroundTint="@color/green_main"
         android:fontFamily="@font/poppinsmedium"
+        android:textAllCaps="false"
         android:text="@string/next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"
@@ -93,7 +92,7 @@
         android:layout_height="64dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_percent="0.75"
+        app:layout_constraintGuide_percent="0.9"
         app:layout_constraintStart_toStartOf="parent" />
 
 

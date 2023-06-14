@@ -91,42 +91,27 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <CheckBox
-        android:id="@+id/seePassword"
-        android:layout_width="wrap_content"
-        android:layout_height="24dp"
-        android:layout_gravity="left"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="209dp"
-        android:alpha="0"
-        android:text="@string/lihat_katasandi"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/passwordEditTextLayout"
-        tools:ignore="MissingConstraints" />
-
     <com.example.usahayuk.customview.CustomButton
         android:id="@+id/loginButton"
-        android:layout_width="345dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginHorizontal="32dp"
         android:layout_marginTop="24dp"
         android:alpha="0"
-        android:textAllCaps="false"
         android:backgroundTint="@color/green_main"
         android:fontFamily="@font/poppinsmedium"
         android:text="@string/login"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seePassword" />
+        app:layout_constraintTop_toBottomOf="@id/passwordEditTextLayout" />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/signin_google"
-        android:layout_width="345dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="32dp"
         app:buttonSize="wide"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/poppinsmedium"

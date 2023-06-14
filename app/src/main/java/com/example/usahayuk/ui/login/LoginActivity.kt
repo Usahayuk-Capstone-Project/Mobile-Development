@@ -87,15 +87,6 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
             supportActionBar!!.hide()
         }
-
-        binding.seePassword.setOnClickListener {
-            if (binding.seePassword.isChecked) {
-                binding.inputPassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
-            } else {
-                binding.inputPassword.transformationMethod = PasswordTransformationMethod.getInstance()
-            }
-        }
-
     }
 
     private fun setupViewModel() {
