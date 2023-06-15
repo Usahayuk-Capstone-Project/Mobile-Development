@@ -1,64 +1,76 @@
 package com.example.usahayuk.ui.community
+
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import com.example.usahayuk.R
-
-// TODO: Rename parameter arguments, choose names that match
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.usahayuk.Utils
+import com.example.usahayuk.data.model.ArticleDataResponse
+import com.example.usahayuk.databinding.FragmentKomunitasBinding
 
 class KomunitasFragment : Fragment() {
 
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var _binding: FragmentKomunitasBinding? = null
+    private val binding get() = _binding!!
+    private lateinit var articleViewModel: ArticleViewModel
+    private lateinit var articleAdapter: ArticleAdapter
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        _binding = FragmentKomunitasBinding.inflate(inflater, container, false)
+        val root : View = binding.root
 
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_komunitas, container, false)
+        articleAdapter = ArticleAdapter()
+        articleAdapter.SetOnItemClickCallback(object : ArticleAdapter.OnItemClickCallback {
+            override fun ItemClicked(user: ArticleDataResponse) {
+                Utils.EXTRA_ARTICLE_AUTHOR = user.penulis
+                Utils.EXTRA_TAGS = user.tags
+                Utils.EXTRA_UID = user.uid
+                Utils.EXTRA_ARTICLE_TITLE = user.title
+                Utils.EXTRA_ARTICLE_CONTENT = user.content
+                val intent = Intent(activity, DetailArticleActivity::class.java)
+                startActivity(intent)
+            }
+        })
+
+        binding.rvArticle.layoutManager = LinearLayoutManager(activity)
+        binding.rvArticle.adapter = articleAdapter
+
+        articleViewModel = ViewModelProvider(this)[ArticleViewModel::class.java]
+        articleViewModel.getListArticle(Utils.EXTRA_UID)
+
+        articleViewModel.setArticle().observe(viewLifecycleOwner) {
+            if (it != null) {
+                articleAdapter.setList(it)
+            }
+        }
+
+        binding.floatingButton.setOnClickListener {
+            val intent = Intent(activity, AddArtikelActivity::class.java)
+            startActivity(intent)
+        }
+
+        return root
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val fragmentTitle = "Komunitas"
-        activity?.title = fragmentTitle
         (activity as AppCompatActivity).supportActionBar?.hide()
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment KomunitasFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            KomunitasFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
+
 }

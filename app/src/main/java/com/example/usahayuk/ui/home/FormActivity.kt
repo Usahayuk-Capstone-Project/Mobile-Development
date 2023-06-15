@@ -142,7 +142,7 @@ class FormActivity : AppCompatActivity() {
     }
 
     private fun recommendationResult() {
-        val client = ApiConfig.getApiServiceMainFeature().recommendationResult(EXTRA_UID)
+        val client = ApiConfig.getApiServiceMainFeature().recommendationResult()
         client.enqueue(object : Callback<RecommendationResultResponse> {
             override fun onResponse(
                 call: Call<RecommendationResultResponse>,
@@ -150,20 +150,26 @@ class FormActivity : AppCompatActivity() {
             ) {
                 val responseBody = response.body()
                 if (response.isSuccessful && responseBody != null) {
+                    showSuccessDialog()
                     isloading(false)
                 } else {
                     isloading(false)
                     Log.e(ContentValues.TAG, "onFailure: ${response.message()}")
+                    Toast.makeText(
+                        this@FormActivity,
+                        "Coba Lagi",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     // Print the response body to the log
                     Log.e(ContentValues.TAG, "Response Body: ${response.body().toString()}")
-                    showSuccessDialog()
+
                 }
             }
             @RequiresApi(Build.VERSION_CODES.R)
             override fun onFailure(call: Call<RecommendationResultResponse>, t: Throwable) {
                 isloading(false)
-                Log.e(ControlsProviderService.TAG, "Failure: ${t.message}")
                 showSuccessDialog()
+                Log.e(ControlsProviderService.TAG, "Failure: ${t.message}")
             }
         })
     }
@@ -202,7 +208,7 @@ class FormActivity : AppCompatActivity() {
                 val responseBody = response.body()
                 if (response.isSuccessful && responseBody != null) {
                     if (responseBody.code != 200) {
-                        isloading(true)
+                        isloading(false)
                         Toast.makeText(
                             this@FormActivity,
                             "Data Berhasil Dikirim",
@@ -218,11 +224,21 @@ class FormActivity : AppCompatActivity() {
                     }
                 } else {
                     isloading(false)
+                    Toast.makeText(
+                        this@FormActivity,
+                        "Coba Lagi",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     Log.e(ContentValues.TAG, "onFailure: ${response.message()}")
                 }
             }
             @RequiresApi(Build.VERSION_CODES.R)
             override fun onFailure(call: Call<RecomenderResponse>, t: Throwable) {
+                Toast.makeText(
+                    this@FormActivity,
+                    "Coba Lagi",
+                    Toast.LENGTH_SHORT
+                ).show()
                 Log.e(ControlsProviderService.TAG, "Failure: ${t.message}")
             }
         })

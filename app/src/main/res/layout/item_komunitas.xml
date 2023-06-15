@@ -19,46 +19,45 @@
         <TextView
             android:id="@+id/artik_title"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="12dp"
-            android:layout_marginBottom="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
             android:fontFamily="@font/poppinsbold"
             android:text="@string/artikel_title"
             android:textColor="@color/green_main"
             android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/artik_author"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
+            android:textColor="@color/grey_text"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/poppinsmedium"
             android:text="@string/artikel_author"
+            app:layout_constraintStart_toStartOf="@+id/artik_title"
             app:layout_constraintTop_toBottomOf="@id/artik_title"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="12dp" />
+            tools:ignore="MissingConstraints" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="70dp"
-            android:layout_marginBottom="66dp"
+            android:layout_marginTop="24dp"
             android:src="@drawable/bisnis_lable"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/button3"
-            app:layout_constraintHorizontal_bias="0.033"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/artik_author"
             app:layout_constraintTop_toBottomOf="@+id/artik_author" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/bacaBtn"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="36dp"
             android:layout_marginEnd="12dp"
             android:layout_marginBottom="18dp"
             android:fontFamily="@font/poppinsmedium"

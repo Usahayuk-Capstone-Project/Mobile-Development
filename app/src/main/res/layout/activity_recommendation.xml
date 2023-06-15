@@ -61,6 +61,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rekomendasi_subtitle" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_recommendation"
         android:layout_width="0dp"
@@ -74,7 +75,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rekomendasi_desc"
-
         tools:listitem="@layout/item_recom"/>
 
     <com.example.usahayuk.customview.CustomButtonIcon

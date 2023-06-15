@@ -1,11 +1,11 @@
 package com.example.usahayuk
 
+import com.example.usahayuk.ui.community.ArticleViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.usahayuk.data.local.datastore.LoginPreferences
 import com.example.usahayuk.ui.MainViewModel
 import com.example.usahayuk.ui.login.LoginViewModel
-import com.example.usahayuk.ui.profle.ProfileViewModel
 import com.example.usahayuk.ui.register.RegisterViewModel
 
 class ViewModelFactory (private val pref:LoginPreferences) : ViewModelProvider.NewInstanceFactory(){

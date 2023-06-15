@@ -37,6 +37,16 @@ interface ApiService {
 
     @POST("recommendation/")
     fun recommendationResult(
-        @Header("id") id: String,
     ): Call<RecommendationResultResponse>
+
+    @POST("api/article/{id}")
+    fun postArticle(
+        @Path("id") id: String,
+        @Body request: PostArticleRequest
+    ): Call<ArticleResponse>
+
+    @GET("api/article/{id}")
+    fun getArticle(
+        @Path("id") id: String
+    ): Call<ArticleMainResponse>
 }

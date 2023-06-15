@@ -55,6 +55,5 @@ class RecommendationActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
     }
 }

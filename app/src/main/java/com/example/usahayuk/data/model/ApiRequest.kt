@@ -1,6 +1,8 @@
 package com.example.usahayuk.data.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
 data class LoginRequest (
     @SerializedName("alamat_email") val email: String,
@@ -33,6 +35,20 @@ data class PostDataRequest(
 data class RecommendationRequest(
     @SerializedName("user_id") val user_id :String
 )
+@Parcelize
+data class PostArticleRequest(
+    @field:SerializedName("penulis")
+    val penulis: String,
+
+    @field:SerializedName("title")
+    val title: String,
+
+    @field:SerializedName("content")
+    val content: String,
+
+    @field:SerializedName("tags")
+    val tags: String
+) : Parcelable
 
 
 

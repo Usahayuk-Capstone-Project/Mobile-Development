@@ -13,11 +13,8 @@ data class RecomenderResponse(
 )
 
 data class RecommendationResultResponse(
-
-	@SerializedName("Hasil_rekomendasi")
-	val hasilRekomendasi: List<GetRecommenderResponse>
-
-) : Serializable
+	val recommendationData: List<String>
+)
 
 data class UserData(
 
