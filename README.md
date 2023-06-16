@@ -43,4 +43,4 @@ For this part, most of the work was done in [Figma][figma-link], so please refer
 
 
 ## APPLICATION DEVELOPMENT
-In the application development part, we used Android Studio as the IDE and wrote all the codes in Kotlin language. For all the processes that we have gone through in making this application, you can simply check the [commits that i made in this repository](https://github.com/Usahayuk-Capstone-Project/Mobile-Development/commits/main)
+In the application development part, we used Android Studio as the IDE and wrote all the codes in Kotlin language. For all the processes that we have gone through in making this application, you can simply check the [commits that we made in this repository](https://github.com/Usahayuk-Capstone-Project/Mobile-Development/commits/main)
