@@ -18,6 +18,9 @@ class DetailArticleActivity : AppCompatActivity() {
         val article = intent.getParcelableExtra<ArticleDataResponse>("article")
 
         // Use the retrieved data to populate the views
+        binding.backbutton.setOnClickListener {
+            onBackPressed()
+        }
         binding.txtJudulArtcl.text = article?.title
         binding.label.text = article?.tags
         binding.contentTxt.text = article?.content

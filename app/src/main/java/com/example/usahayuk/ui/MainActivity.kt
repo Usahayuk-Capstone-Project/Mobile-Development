@@ -9,7 +9,6 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.usahayuk.R
 import com.example.usahayuk.Utils
@@ -18,10 +17,6 @@ import com.example.usahayuk.ViewModelFactory
 import com.example.usahayuk.WelcomeActivity
 import com.example.usahayuk.data.local.datastore.LoginPreferences
 import com.example.usahayuk.databinding.ActivityMainBinding
-import com.example.usahayuk.ui.community.KomunitasFragment
-import com.example.usahayuk.ui.home.HomeFragment
-import com.example.usahayuk.ui.konsultasi.KonsultasiFragment
-import com.example.usahayuk.ui.profle.ProfileFragment
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 

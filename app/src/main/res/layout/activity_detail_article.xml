@@ -8,7 +8,7 @@
     tools:context=".ui.community.DetailArticleActivity">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/backbutton"
         android:layout_width="44dp"
         android:layout_height="37dp"
         android:layout_marginStart="32dp"
@@ -27,19 +27,19 @@
         android:fontFamily="@font/poppinsbold"
         android:textSize="20sp"
         android:text="@string/judul_artikel"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
+        app:layout_constraintStart_toStartOf="@+id/backbutton"
+        app:layout_constraintTop_toBottomOf="@+id/backbutton" />
 
 
     <TextView
         android:id="@+id/label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Label"
-        android:textColor="@color/grey_text"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/poppinsmedium"
+        android:text="Label"
+        android:textColor="@color/grey_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.093"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,7 +1,6 @@
 package com.example.usahayuk.data.model
 
 import com.google.gson.annotations.SerializedName
-import java.io.Serializable
 
 data class RecomenderResponse(
 

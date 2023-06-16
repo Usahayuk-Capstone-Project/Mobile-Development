@@ -32,9 +32,6 @@
             android:name=".ui.profle.EditProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.FutureFragment"
-            android:exported="false" />
-        <activity
             android:name=".WelcomeActivity"
             android:exported="false" />
         <activity

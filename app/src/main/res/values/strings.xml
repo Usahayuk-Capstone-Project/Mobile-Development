@@ -157,6 +157,10 @@
     <string name="hasil_rekomendasi_desc">Berikut beberapa contoh ide usaha bisnis yang cocok dengan anda</string>
     <string name="isi_data_ulang">Isi data Ulang</string>
     <string name="tambah_artikel">Tambah Artikel</string>
+    <string name="edit_profil">Edit Profil</string>
+    <string name="isi_artikel">Isi Artikel</string>
+    <string name="kirim">Kirim</string>
+    <string name="kembali">Kembali</string>
 
 
 </resources>

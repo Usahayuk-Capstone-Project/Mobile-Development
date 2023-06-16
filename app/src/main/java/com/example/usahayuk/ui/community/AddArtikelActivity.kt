@@ -25,6 +25,7 @@ class AddArtikelActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddArtikelBinding.inflate(layoutInflater)
+        supportActionBar?.hide()
         setContentView(binding.root)
         setupAction()
     }

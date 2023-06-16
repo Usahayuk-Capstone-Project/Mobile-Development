@@ -2,7 +2,6 @@ package com.example.usahayuk.ui.community
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.usahayuk.data.Repository
 import com.example.usahayuk.data.model.ArticleDataResponse

@@ -2,13 +2,10 @@ package com.example.usahayuk.customview
 
 import android.content.Context
 import android.graphics.Rect
-import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import androidx.appcompat.widget.AppCompatEditText
-import androidx.core.content.ContextCompat
-import com.example.usahayuk.R
 
 class CustomName : AppCompatEditText, View.OnTouchListener {
     var isNameValid: Boolean = false

@@ -1,6 +1,5 @@
 package com.example.usahayuk
 
-import com.example.usahayuk.ui.community.ArticleViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.usahayuk.data.local.datastore.LoginPreferences

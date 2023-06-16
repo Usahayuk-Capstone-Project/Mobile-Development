@@ -4,9 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
-import com.example.usahayuk.R
 import com.example.usahayuk.data.model.ArticleDataResponse
 import com.example.usahayuk.databinding.ItemKomunitasBinding
 
